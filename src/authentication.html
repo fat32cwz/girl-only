@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>认证信息</title>
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">   
+        <!-- Bootstrap -->
+        <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!--自己的样式文件 -->
+        <link href="css/demo.css" rel="stylesheet">
+        <link href="css/authentication.css" rel="stylesheet">        
+        <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <img src="images/brand.png" alt="少女only商家中心" class="brand">
+            <ul class="nav navbar-nav">
+                <li><a href="##"><span><img src="images/password.png" alt=""></span>
+                    修改密码</a></li>
+                <li><a href="##"><span><img src="images/logoff.png" alt=""></span>
+                    退出登录</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <div>
+                <img src="images/avatar.jpg" alt="avatar" class="avatar" width="85" height="85">
+                <span class="info">
+                    <ul>
+                        <li class="info1">商家信息</li>
+                        <li class="info2">支付宝信息</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="list-group">
+                <a href="index.html" class="list-group-item" id="index">
+                    <span><img src="images/index.png" alt=""></span>
+                    首页
+                </a>
+                <div class="list-group-item listTitle">
+                    <span><img src="images/count.png" alt=""></span>
+                    商品统计类
+                </div>
+                <a href="sold.html" class="list-group-item">
+                    已售出
+                </a>
+                <a href="introduce.html" class="list-group-item">
+                    发布商品
+                </a>
+                <a href="onsale.html" class="list-group-item">
+                    出售中
+                </a>
+                <a href="logistics.html" class="list-group-item">
+                    物流信息
+                </a>
+                <div class="list-group-item listTitle">
+                    <span><img src="images/info.png" alt=""></span>
+                    基本信息类
+                </div>
+                <a href="baseinfo.html" class="list-group-item">
+                    基本信息
+                </a>
+                <a href="authentication.html" class="list-group-item onSelect">
+                    认证信息
+                </a>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="panel panel-default" id="panel">
+                <div class="panel-heading"><img src="images/info.png" alt="">认证信息</div>
+                <div class="panel-body">
+                    <div class="info-item">
+                        <span class="info-title">姓&#x3000&#x3000名</span>
+                        <span class="info-data" id="">XXX</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">电&#x3000&#x3000话</span>
+                        <span class="info-data" id="">18812345687</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">证件号码</span>
+                        <span class="info-data" id="">440512698745141265</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">地&#x3000&#x3000址</span>
+                        <span class="info-data" id="">XX省XX市XX区XX路XX号XX房</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">认证时间</span>
+                        <span class="info-data" id="">2017.06.06-00:17:10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src=""></script> 
+    </body>
+</html>

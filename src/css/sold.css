@@ -1,0 +1,184 @@
+/* .navbar-default{
+	box-shadow:0px 2px 2px #f1e1e2;
+} */
+
+.table-header{
+	width: 100%;
+	background-color: #FFF;
+}
+ 
+.table-header>.nav>li>a{ 
+	padding-top:20px; 
+	padding-bottom:20px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+}
+
+#screening{
+	width: 95%;
+	margin-left: 5%;
+	background-color: #FFF;
+}
+
+#screening>li>a{
+	color: #bea4a3;
+	border-left: 2px solid #ffefe2;
+	font-weight: 500;
+}
+
+
+.screening-active{
+	background-color: #ffa0ae!important;
+	color: #FFF!important;
+}
+
+.table-body,table-footer{
+	width: 100%;
+}
+
+#table{
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+#footer{
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+tr{
+	font-size: 18px;
+	color: #ac988f;
+}
+
+
+th,td{
+	text-align: center;
+}
+
+th{
+	background-color: #ff9fad;
+	color: #FFF;
+	font-size: 18px;
+	padding: 15px 0px!important;
+	font-weight: 500;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+	background-color: #FFF;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+	background-color: #ffead9;
+}
+
+.table>tbody>tr>td{
+	border: none;
+}
+
+#allSelect{
+	padding-left:20px;	
+	color: #a29390;
+	font-size: 15px;
+}
+
+#allSelect,#button-group,#pagination{
+	display: inline-block;
+}
+
+#button-group{
+	margin-left: 5%;
+}
+
+#button-group button{
+	border: 0;
+	border-radius: 0;
+}
+
+#button-group button:first-child{
+	margin-right: 20px;
+}
+
+
+.pagination{
+	margin-top: 0;
+	margin-bottom: 0;
+	position: relative;
+	top: 13px;
+}
+
+#pagination{
+	margin-left: 25%;
+}
+
+#plfh{
+	background-color: #ff95ac;
+	color: #FFF;
+	padding: 5px 30px;
+	font-size: 15px;
+	width: 130px;
+}
+
+#plzk{
+	background-color: #dccac8;
+	color: #FFF;
+	padding: 5px 20px;
+	font-size: 15px;
+	width: 130px;
+}
+
+.pagination>li>a{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+	border:none;
+	margin:0px 2px;
+}
+
+.pagination>.active>a{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+
+.pagination>.active>a:link{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:visited{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:link{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:visited{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:active{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}

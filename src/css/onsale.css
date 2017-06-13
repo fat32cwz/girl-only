@@ -1,0 +1,164 @@
+.no-margin{
+	margin: 0;
+}
+
+body{
+	background-color: #fffcfd;
+}
+
+.goods-header{
+	margin-top: 20px;
+}
+
+.header{
+	width: auto;
+	margin-left: 40%;
+}
+
+.header>.nav>li>a{
+	font-size: 18px;
+}
+
+.header>.nav>li>a{
+	border-bottom: 3px solid #f8f2f2;
+	color: #dac5c2;
+}
+
+
+.header>.nav>li>.active{
+	border-bottom: 3px solid #feadbe!important;
+	color: #ffa4be;
+}
+
+
+
+.nav-tabs{
+	border: 0;
+}
+
+
+.goods-body>.row{	
+	padding: 0px 20px;
+}
+
+
+.goods{
+	margin-bottom: 10px; 
+	border:2px solid #fbdbdc;
+	padding: 0;
+	width: 30%;
+	margin-left:1.5%;
+	display: inline-block;
+	background-color: #fff;
+}
+
+.goods-body{
+	margin-top: 40px;
+}
+
+
+.goods-img,.goods-info{
+	float: left;
+}
+
+.goods-info{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+
+
+.goods-img{
+	width: 40%;
+	height: 265px;
+}
+
+.goods-info-item{
+	margin: 20px 0px;
+}
+
+.goods-info-item>span{
+	font-size: 16px;
+}
+
+.goods-info-item>.goods-info-title{
+	color: #ffa6bb;        /* 标题粉红 */
+	margin-right: 30px;
+	font-weight: bold;
+}
+
+.goods-info-item>.goods-info-data{
+	color: #c4b3ab;        /* 褐色 */
+}
+
+#button-group>button{
+	background-color: #ff96ad;
+	padding: 5px 10px;
+	color: #fff;
+	border: 0;
+	border-radius: 0;
+	width: 104px;
+}
+
+#button-group button:first-child{
+	margin-right: 10px;
+}
+
+
+.goods-footer{
+	margin-top: 50px;
+}
+
+
+.pagination>li>a{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+	border:none;
+	margin:0px 2px;
+}
+
+.pagination>.active>a{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+
+.pagination>.active>a:link{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:visited{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:link{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:visited{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:active{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}

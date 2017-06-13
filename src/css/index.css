@@ -1,0 +1,90 @@
+#table{
+	width: 80%;
+	margin-left: 8%;
+	margin-top: 100px;
+}
+
+
+th,td{
+	text-align: center;
+}
+
+th{
+	background-color: #ff9fad;
+	color: #FFF;
+	font-size: 18px;
+	padding: 20px 0px!important;
+	font-weight: 500;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+	background-color: #FFF;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+	background-color: #ffead9;
+}
+
+.table>tbody>tr>td{
+	border: none;
+}
+
+tr{
+	font-size: 18px;
+	color: #ac988f;
+}
+
+
+.pagination>li>a{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+	border:none;
+	margin:0px 2px;
+}
+
+.pagination>.active>a{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+
+.pagination>.active>a:link{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:visited{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:link{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:visited{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:active{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+

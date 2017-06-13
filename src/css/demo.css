@@ -1,0 +1,190 @@
+body{
+  padding-top: 70px;/*有顶部固定导航条时设置*/
+  font-family: Microsoft YaHei;
+  background-color: #fff6f7;
+
+}
+
+button:focus{
+	outline: 0!important;
+}
+
+textarea:focus{
+	outline: 0!important;
+}
+
+input:focus{
+	outline: 0!important;
+}
+
+select:focus{
+	outline: 0!important;
+}
+
+.disableLink{           /*链接无效化*/
+	pointer-events:none;
+	color:#afafaf;
+	cursor:default;
+}
+
+.unselectable {         /* 禁止选中文字 */
+   -moz-user-select:none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar-default{
+	background-color: #FFF;
+}
+
+
+.navbar-nav{
+	float: right;
+	padding-right: 50px;
+}
+
+.navbar-fixed-top img{
+	position: relative;
+	bottom: 5px;
+}
+
+.navbar-nav>li{
+	margin:6px 20px; 
+	height: auto;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: #d8c4bd;
+	font-size: 20px;
+	font-family: Microsoft YaHei;
+}
+
+.navbar-default .navbar-nav>li>a:link{
+	color: #d8c4bd;
+}
+
+.navbar-default .navbar-nav>li>a:visited{
+	color: #d8c4bd;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	/* color: #ff9fad; */                              /* 粉红 */
+	color: #d8c4bd;
+}
+
+.navbar-default .navbar-nav>li>a:active{
+	color: #d8c4bd;
+}
+
+
+.menu{
+	position: fixed;
+	left: 0;
+	width: 288px;
+	height: 100%;
+	background-color: #ff9fad;
+}
+
+.list-group-item{
+	background-color: inherit;
+	color: #FFF;
+	text-align: left;
+	border: none;
+	font-size: 18px;
+	font-weight: 100;
+}
+
+#index{
+	font-size: 22px;
+	padding-left: 55px;
+	text-align: left;
+}
+
+a.list-group-item{
+	color: #FFF;
+	text-align: left;
+	padding-left: 110px;
+}
+
+a.list-group-item:link{
+	background-color: #ff9fad;
+	color: #FFF;
+}
+
+a.list-group-item:visited{
+	background-color: #ff9fad;
+	color: #FFF;
+}
+
+
+a.list-group-item:hover{
+	background-color: #ff80a6;
+	color: #FFF;
+}
+
+
+a.list-group-item:active{
+	color: #FFF;
+	background-color: #ff9fad;
+}
+
+.listTitle{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+div.list-group-item{
+	font-size: 22px;
+	padding-left: 55px;
+	text-align: left;
+}
+
+.onSelect{
+	background-color: #e57394!important;
+}
+
+.avatar{
+	margin:20px 0px 20px 30px;
+	border-radius: 50%;
+	border: 3px solid #ff9fad;
+}
+
+.avatar,.info{
+	display: inline-block;
+}
+
+.info1{
+	list-style-type:none;
+	font-size: 20px;
+	color: #FFF;
+}
+
+.info2{
+	list-style-type: none;
+	font-size: 14px;
+	color: #FFF;
+	margin-top: 5px;
+}
+
+.info ul{
+	padding-left: 0;
+	position: relative;
+	top: 10px;
+}
+
+.list-group-item > span > img{
+	margin-right: 20px;
+}
+
+.right-container{
+	margin-left: 288px;
+}
+
+.right-container,.menu{
+	display: block;
+}
+
+
+
+/* 以下为页面样式 */

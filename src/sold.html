@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>已售出商品</title>
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">   
+        <!-- Bootstrap -->
+        <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!--自己的样式文件 -->
+        <link href="css/demo.css" rel="stylesheet">
+        <link href="css/sold.css" rel="stylesheet">        
+        <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <img src="images/brand.png" alt="少女only商家中心" class="brand">
+            <ul class="nav navbar-nav">
+                <li><a href="##"><span><img src="images/password.png" alt=""></span>
+                    修改密码</a></li>
+                <li><a href="##"><span><img src="images/logoff.png" alt=""></span>
+                    退出登录</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <div>
+                <img src="images/avatar.jpg" alt="avatar" class="avatar" width="85" height="85">
+                <span class="info">
+                    <ul>
+                        <li class="info1">商家信息</li>
+                        <li class="info2">支付宝信息</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="list-group">
+                <a href="index.html" class="list-group-item" id="index">
+                    <span><img src="images/index.png" alt=""></span>
+                    首页
+                </a>
+                <div class="list-group-item listTitle">
+                    <span><img src="images/count.png" alt=""></span>
+                    商品统计类
+                </div>
+                <a href="##" class="list-group-item onSelect">
+                    已售出
+                </a>
+                <a href="introduce.html" class="list-group-item">
+                    发布商品
+                </a>
+                <a href="onsale.html" class="list-group-item">
+                    出售中
+                </a>
+                <a href="logistics.html" class="list-group-item">
+                    物流信息
+                </a>
+                <div class="list-group-item listTitle">
+                    <span><img src="images/info.png" alt=""></span>
+                    基本信息类
+                </div>
+                <a href="baseinfo.html" class="list-group-item">
+                    基本信息
+                </a>
+                <a href="authentication.html" class="list-group-item">
+                    认证信息
+                </a>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="table-header">
+                <ul class="nav nav-pills" id="screening">
+                  <li class="active"><a href="##" class="screening-active">近三个月订单</a></li>
+                  <li><a href="##">等待商家付现货款</a></li>
+                  <li><a href="##">等待买家付定金</a></li>
+                  <li><a href="##">等待买家付尾款</a></li>
+                  <li><a href="##">等待发货</a></li>
+                  <li><a href="##">已发货</a></li>
+                  <li><a href="##">退款中</a></li>
+                  <li><a href="##">成功的订单</a></li>
+                  <li><a href="##">关闭的订单</a></li>
+                  <li><a href="##">三个月前订单</a></li>
+                </ul>
+            </div>
+            <div class="table-body">
+                <div id="table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>宝贝</th>
+                                <th>单价</th>
+                                <th>数量</th>
+                                <th>买家</th>
+                                <th>交易状态</th>
+                                <th>实收款(元)</th>
+                                <th>订单生成时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>21132020</td>
+                                <td>230</td>
+                                <td>23</td>
+                                <td>fat32cwz</td>
+                                <td>完成</td>
+                                <td>556.00</td>
+                                <td>2017.02.11-00:20:34</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="table-footer">
+                <div id="footer">
+                    <div class="checkbox"  id="allSelect">
+                        <label class="unselectable" onselectstart="return false">
+                            <input type="checkbox" value="" class="checkbox">全部选择
+                        </label>
+                    </div>
+                    <div id="button-group">
+                        <button class="btn  btn-default" type="button" id="plfh">批量发货</button>
+                        <button class="btn  btn-default" type="button" id="plzk">批量转至尾款</button>
+                    </div>
+                    <div id="pagination">
+                        <ul class="pagination pagination">
+                          <li><a href="#">上一页</a></li>
+                          <li class="active"><a href="" class="disableLink">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="javascript:void(0);" class="disableLink">...</a></li>
+                          <li><a href="#">6</a></li>
+                          <li><a href="#">7</a></li>
+                          <li><a href="#">8</a></li>
+                          <li><a href="#">下一页</a></li>
+                          <li><a href="#">第&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        
+        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/saled.js"></script> 
+    </body>
+</html>

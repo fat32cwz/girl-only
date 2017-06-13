@@ -1,0 +1,199 @@
+.right-container{
+	margin:20px 60px 0px 308px;
+}
+
+.log-brand{
+	float: left;
+	color: #bea79f;
+	font-size: 21px;
+	margin-left: 10px;
+}
+
+.nav-tabs{
+	border-bottom: 2px solid #f7edec;
+}
+
+.nav-tabs>li>a{
+	color: #bea79f;
+	font-size: 15px;
+	font-weight: bold;
+	border: none;
+}
+
+.nav-tabs>li>a:link{
+	background-color: #fff6f7;
+	color: #bea79f;
+}
+
+.nav-tabs>li>a:visited{
+	background-color: #fff6f7;
+	color: #bea79f;
+}
+
+.nav-tabs>li>a:hover{
+	background-color: #fff6f7;
+	border-bottom: 3px solid #ff9daf;
+	color: #ff9daf;
+}
+
+.nav-tabs>li>a:active{
+	background-color: #fff6f7;
+	color: #bea79f;
+}
+
+.nav-tabs>li{
+	float: right;
+}
+
+.nav-tabs>li>.active{
+	border-bottom: 3px solid #ff9daf;
+	color: #ff9daf!important;
+}
+
+
+#table{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+#footer{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+tr{
+	font-size: 18px;
+	color: #ac988f;
+}
+
+.createTime{
+	border: none;
+}
+
+
+th,td{
+	text-align: center;
+}
+
+th{
+	background-color: #ff9fad;
+	color: #FFF;
+	font-size: 18px;
+	padding: 15px 0px!important;
+	font-weight: 500;
+	border-left: 3px solid #fff;
+	min-width: 100px;
+}
+
+.cb{
+	min-width: 50px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+	background-color: #FFF;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+	background-color: #ffead9;
+}
+
+.table>tbody>tr>td{
+	border: none;
+}
+
+#allSelect{
+	padding-left:25px;	
+	color: #a29390;
+	font-size: 15px;
+}
+
+#allSelect,#button-group,#pagination{
+	display: inline-block;
+}
+
+#button-group{
+	margin-left: 3%;
+}
+
+#button-group button:first-child{
+	margin-right: 20px;
+}
+
+
+.pagination{
+	margin-top: 0;
+	margin-bottom: 0;
+	position: relative;
+	top: 13px;
+}
+
+#pagination{
+	margin-left: 40%;
+}
+
+#plfh{
+	background-color: #ff95ac;
+	color: #FFF;
+	padding: 5px 30px;
+	font-size: 15px;
+	width: 130px;
+	border: 0;
+	border-radius: 0;
+
+}
+
+.pagination>li>a{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+	border:none;
+	margin:0px 2px;
+}
+
+.pagination>.active>a{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+
+.pagination>.active>a:link{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:visited{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active>a:active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:link{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:visited{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>li>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>li>a:active{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+

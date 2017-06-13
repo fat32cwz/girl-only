@@ -1,0 +1,77 @@
+body{
+	background-color: #fffcfd;
+}
+
+
+.infocontainer{
+	margin-top: 8%;
+	margin-left: 10%;
+}
+
+.shop-avatar>img{
+	vertical-align: text-top;
+}
+
+.shop-avatar>button{
+	vertical-align: bottom;
+}
+
+.shop-introduction>textarea{
+	vertical-align: text-top;
+}
+
+.shop-introduction>span{
+	vertical-align: bottom;
+}
+
+.shop-avatar,.shop-name,.shop-introduction{
+	font-size: 20px;
+	color: #b7a39c;
+}
+
+.shop-name{
+	margin: 30px 0px;
+}
+
+textarea{
+	resize: none;
+	border: 1px solid #d8cccc;
+	padding: 5px 10px;
+}
+
+textarea:focus{
+	outline: 0;
+}
+
+.shop-avatar>img,.shop-name>span,.shop-introduction>textarea{
+	margin-left: 30px;
+}
+
+#changeAvatar,#changeName{
+	color: #fb9cb0;
+	border: 2px solid #fb9cb0;
+	background-color: #fff;
+	padding: 5px 20px;
+	border-radius: 0;
+	font-weight: bold;
+}
+
+#changeAvatar{
+	margin-left: 30px;
+}
+
+#changeName{
+	margin-left: 50px;
+}
+
+#saveChanges{
+	background-color: #ff96ad;
+	color: #fff;
+	border-radius: 0;
+	padding: 5px 20px;
+	margin-left: 120px; 
+	margin-top: 30px;
+	border: 0;
+	font-size: 18px;
+}
+
