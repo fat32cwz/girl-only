@@ -5,7 +5,7 @@ $.ajaxSetup({
 	crossDomain: true 
 });
 
-
+jQuery.support.cors = true;
 
 $(function () {
 	inputHover();
@@ -32,8 +32,11 @@ function login() {
 	var password_hash = $("#password_hash").val();
 	$("#login").click(function () {
 		$.ajax({
-             type: 'POST',
              url: "http://server.shaonvonly.com/api/login",
+             type:"GET",
+             beforeSend: function (xhr) {
+	        	xhr.setRequestHeader("X-Custom-Header1", "Bar");
+	    	 },
              data: {
                  username : username,
                  password_hash:password_hash,
@@ -41,8 +44,8 @@ function login() {
              success: function(resp){
              	console.log(resp);
              } ,
-             dataType: 'json',
-             creditials:''
+             dataType: 'jsonp',
+             crossDomain:true
          });
 	});
 
