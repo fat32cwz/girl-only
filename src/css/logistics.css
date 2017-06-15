@@ -197,3 +197,9 @@ th{
 	color: #c2aaa8;
 }
 
+@media(max-width: 1440px){
+	.right-container{
+		margin:20px 60px 0px 250.4px;
+	}
+
+}

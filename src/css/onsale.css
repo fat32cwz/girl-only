@@ -46,7 +46,7 @@ body{
 	margin-bottom: 10px; 
 	border:2px solid #fbdbdc;
 	padding: 0;
-	width: 30%;
+	width: 31%;
 	margin-left:1.5%;
 	display: inline-block;
 	background-color: #fff;
@@ -63,7 +63,7 @@ body{
 
 .goods-info{
 	margin-top: 10px;
-	margin-left: 30px;
+	margin-left: 5%;
 }
 
 
@@ -161,4 +161,21 @@ body{
 .pagination>li>a:active{
 	background-color: #ffe4e9;
 	color: #c2aaa8;
+}
+
+@media(max-width: 1440px){
+	.header{
+		width: auto;
+		margin-left: 35%;
+	}
+
+	#button-group>button{
+		background-color: #ff96ad;
+		padding: 5px 10px;
+		color: #fff;
+		border: 0;
+		border-radius: 0;
+		width: 9ee0px;
+		font-size: 8px;
+	}
 }

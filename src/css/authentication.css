@@ -4,9 +4,9 @@ body{
 
 
 #panel{
-	width: 35%;
+	width: 45%;
 	margin-top: 10%;
-	margin-left: 30%;
+	margin-left: 25%;
 	border: 2px solid #f2eae7;
 }
 
@@ -24,7 +24,9 @@ body{
 }
 
 .panel-body{
-	padding:30px 92px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10%;
 	color: #cdb5ab;
 	font-size: 20px;
 }

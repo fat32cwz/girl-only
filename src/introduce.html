@@ -148,14 +148,14 @@
                         </div>
                         <div id="pic-input">
                             <span class="pic-group">
-                                <img src="" alt="" width="100" height="100">
-                                <button class="btn btn-default" id="addPic_2"><span class="fa fa-plus"></span> 宝贝长图</button>
-                            </span>
-                            <span class="pic-group">
-                                <img src="" alt="" width="100" height="100">
-                                <img src="" alt="" width="100" height="100">
-                                <img src="" alt="" width="100" height="100">
+                                <img src="" alt="" width="70" height="70">
+                                <img src="" alt="" width="70" height="70">
+                                <img src="" alt="" width="70" height="70">
                                 <button class="btn btn-default" id="addPic_1"><span class="fa fa-plus"></span> 轮播图片</button>
+                            </span>
+                            <span class="pic-group" id="addLongImg">
+                                <img src="" alt="" width="70" height="70">
+                                <button class="btn btn-default" id="addPic_2"><span class="fa fa-plus"></span> 宝贝长图</button>
                             </span>
                         </div>
                     </div>
@@ -233,7 +233,26 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div id="radio-group-2">
+                        <form>
+                            库存计数
+                            <label><input type="radio" name="type" value="" checked> 买家拍下减库存</label>
+                            <label><input type="radio" name="type" value=""> 买家付款减库存</label>
+                        </form>
+                        <form>
+                            上架时间
+                            <label><input type="radio" name="paytype" value="" checked> 立刻上架</label>
+                            <label><input type="radio" name="paytype" value=""> 定时上架</label>
+                            <label><input type="radio" name="paytype" value=""> 放入仓库</label>     
+                        </form>
+                        <button class="btn btn-default" id="addSize"><span class="fa fa-plus"></span> 新增规格</button> 
+                    </div>
+
                 </div>
+            </div>
+            <div id="btn-group-bottom">
+                <button class="btn btn-default">(๑´ロ`๑)保存更改</button>
+                <button class="btn btn-default">现在就去发布(>▽<)</button>
             </div>                                                         
         </div>
 
@@ -242,6 +261,6 @@
         <script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
         <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
         <script src="Bootstrap/js/bootstrap.min.js"></script>
-        <script src=""></script> 
+        <script src="js/introduce.js"></script> 
     </body>
 </html>

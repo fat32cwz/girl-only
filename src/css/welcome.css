@@ -1,0 +1,126 @@
+body{
+	background-image:url(../images/welcome.jpg);
+	background-size:100% auto;
+	font-family: "Microsoft YaHei";
+}
+
+input:focus{
+	outline: 0!important;
+}
+
+#logform{
+	position: absolute;
+	left: 10%;
+	top: 30%;
+	width: 20%;
+}
+
+.name{
+	border:solid 2px #ddcace;
+	border-radius: 10px;
+	height:40px;
+	background:url(../images/logoff.png) no-repeat 0;
+	background-position: 20px center;
+	margin-bottom: 20px;
+	padding-left: 20px;
+}
+
+.name.focus{
+	background:url(../images/logoff-focus.png) no-repeat 0;
+	background-position: 20px center;
+}
+
+.password.focus{
+	background:url(../images/password-focus.png) no-repeat 0;
+	background-position: 20px center;
+}
+
+.password{
+	border:solid 2px #ddcace;
+	border-radius: 10px;
+	height:40px;
+	background:url(../images/password.png) no-repeat 0;
+	background-position: 20px center;
+	padding-left: 20px;
+}
+
+.name input,.password input{
+	float:left;
+	border:none;
+	background:none;
+	height:40px;
+	line-height:30px;
+	width:100%; 
+	text-indent:32px;
+}
+
+.forget{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.forget a{
+	float: right;
+	color: #ffcab2;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.login{
+	width: 100%;
+	color: #fff;
+	font-size: 20px;
+	border: 0;
+	border-radius: 8px;
+	background-color: #ff5f9b;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.focus{
+	border:solid 2px #ef97a5;
+}
+
+#tab-write,#tab-sweep{
+	padding: 10% 20%;
+	background-color: #fff9fd;
+	border: 1px solid #ee8e9c;
+	border-top: 0;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	height: 330px;
+}
+
+#tab-list li{
+	width: 50%;
+	text-align: center;
+}
+
+#tab-list>li>a{
+	background-color: #ff5f9b;
+	color: #fff;
+	margin-right: 0;
+	border: 1px solid #ee8e9c;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom: 0;
+	font-size: 20px;
+	padding: 15px 30px;
+}
+
+#tab-list>.active>a{
+	background-color: #fff9fd;
+	color: #ff619c;
+	transform: scale(1,1.1);
+	-ms-transform: scale(1,1.1);	/* IE 9 */
+	-webkit-transform: scale(1,1.1);	/* Safari 和 Chrome */
+	-o-transform: scale(1,1.1);	/* Opera */
+	-moz-transform: scale(1,1.1);            /* Firefox */
+
+}
+
+.nav-tabs{
+	border-bottom: 0;
+}
