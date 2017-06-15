@@ -44,7 +44,7 @@ function login() {
              success: function(resp){
              	console.log(resp);
              } ,
-             dataType: 'jsonp',
+             dataType: 'json',
              crossDomain:true
          });
 	});
