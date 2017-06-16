@@ -5,6 +5,7 @@ $.ajaxSetup({
 	crossDomain: true 
 });
 
+jQuery.support.cors = true;
 
 $(function () {
 	inputHover();
@@ -29,13 +30,14 @@ function inputHover(){
 function login() {
 	var username = $("#username").val();
 	var password_hash = $("#password_hash").val();
+
 	$("#login").click(function () {
 		$.ajax({
              url: "http://server.shaonvonly.com/api/login",
              type:"POST",
              data: {
                  username : username,
-                 password_hash:password_hash,
+                 password_hash: password_hash,
              },
              success: function(resp){
              	console.log(resp);
