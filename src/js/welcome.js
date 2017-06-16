@@ -28,10 +28,9 @@ function inputHover(){
 }
 
 function login() {
-	var username = $("#username").val();
-	var password_hash = $("#password_hash").val();
-
 	$("#login").click(function () {
+		var username = $("#username").val();
+		var password_hash = $("#password_hash").val();
 		$.ajax({
              url: "http://server.shaonvonly.com/api/login",
              type:"POST",
@@ -39,8 +38,8 @@ function login() {
                  username : username,
                  password_hash: password_hash,
              },
-             success: function(resp){
-             	console.log(resp);
+             success: function(){
+             	window.location.href = "index.html";
              },
          });
 	}); 
