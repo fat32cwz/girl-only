@@ -5,7 +5,6 @@ $.ajaxSetup({
 	crossDomain: true 
 });
 
-jQuery.support.cors = true;
 
 $(function () {
 	inputHover();
@@ -33,21 +32,16 @@ function login() {
 	$("#login").click(function () {
 		$.ajax({
              url: "http://server.shaonvonly.com/api/login",
-             type:"GET",
-/*             beforeSend: function (xhr) {
-	        	xhr.setRequestHeader("X-Custom-Header1", "Bar");
-	    	 },*/
+             type:"POST",
              data: {
                  username : username,
                  password_hash:password_hash,
              },
              success: function(resp){
              	console.log(resp);
-             } ,
-             dataType: 'json',
-             crossDomain:true
+             },
          });
-	});
+	}); 
 
 	
 }
