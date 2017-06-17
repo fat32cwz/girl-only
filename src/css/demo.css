@@ -155,8 +155,8 @@ div.list-group-item{
 .avatar{
 	border-radius: 50%;
 	border: 3px solid #ff9fad;
-	width: 35%;
-	height: 35%;
+	width: 30%;
+	height: 30%;
 }
 
 .avatar,.info{
@@ -165,6 +165,7 @@ div.list-group-item{
 
 .info{
 	position: relative;
+	top:10px;
 	left: 10px; 
 }
 
@@ -233,6 +234,10 @@ div.list-group-item{
 
 	.info2{
 		font-size: 12px;
+	}
+
+	.info{
+		top: 0;
 	}
 
 }
