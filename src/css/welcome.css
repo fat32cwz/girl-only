@@ -124,3 +124,9 @@ input:focus{
 .nav-tabs{
 	border-bottom: 0;
 }
+
+@media (max-width: 1440px) {
+	#logform{
+		width: 25%;
+	}	
+}
