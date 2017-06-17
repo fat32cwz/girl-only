@@ -77,11 +77,15 @@ select:focus{
 	color: #d8c4bd;
 }
 
+.brand{
+	width: 15%;
+	height: 100%;
+}
 
 .menu{
 	position: fixed;
 	left: 0;
-	width: 288px;
+	width: 15%;
 	height: 100%;
 	background-color: #ff9fad;
 }
@@ -145,9 +149,11 @@ div.list-group-item{
 }
 
 .avatar{
-	margin:20px 0px 20px 30px;
+	margin:20px 0px 20px 20px;
 	border-radius: 50%;
 	border: 3px solid #ff9fad;
+	width: 35%;
+	height: 35%;
 }
 
 .avatar,.info{
@@ -178,7 +184,7 @@ div.list-group-item{
 }
 
 .right-container{
-	margin-left: 288px;
+	margin-left: 15%;
 }
 
 .right-container,.menu{
@@ -187,15 +193,23 @@ div.list-group-item{
 
 @media(max-width: 1440px){
 	.brand{
-		width: 230.4px;
-	}
-
-	.menu{
-		width: 230.4px;
+		margin-top: 10px;
 	}
 
 	.right-container{
-		margin-left: 230.4px;
+		margin-left: 15%;
+	}
+
+	div.list-group-item{
+		font-size: 20px;
+	}
+
+	#index{
+		font-size: 20px;
+	}
+
+	.list-group-item{
+		font-size: 16px;
 	}
 }
 

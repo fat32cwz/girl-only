@@ -154,6 +154,7 @@ body{
 .pic-group>img{
 	display: inline-block;
 	border: 1px solid #ffbdbe;
+	color: #fff;
 }
 
 #addPic_1,#addPic_2{

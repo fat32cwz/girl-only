@@ -1,5 +1,5 @@
 .right-container{
-	margin:20px 60px 0px 308px;
+	margin:20px 60px 30px 16%;
 }
 
 .log-brand{
@@ -52,14 +52,14 @@
 
 
 #table{
-	width: 90%;
-	margin-left: 5%;
+	width: 95%;
+	margin-left: 2%;
 	margin-top: 30px;
 }
 
 #footer{
-	width: 90%;
-	margin-left: 5%;
+	width: 95%;
+	margin-left: 2%;
 	margin-top: 30px;
 }
 
@@ -104,7 +104,7 @@ th{
 }
 
 #allSelect{
-	padding-left:25px;	
+	padding-left:20px;	
 	color: #a29390;
 	font-size: 15px;
 }
@@ -125,12 +125,12 @@ th{
 .pagination{
 	margin-top: 0;
 	margin-bottom: 0;
-	position: relative;
-	top: 13px;
+ 	position: relative;
+	top: 5px; 
 }
 
 #pagination{
-	margin-left: 40%;
+	float: right;
 }
 
 #plfh{
@@ -199,7 +199,7 @@ th{
 
 @media(max-width: 1440px){
 	.right-container{
-		margin:20px 60px 0px 250.4px;
+		margin:20px 2% 30px 16%;
 	}
 
 }
