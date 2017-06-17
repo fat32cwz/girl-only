@@ -90,6 +90,10 @@ select:focus{
 	background-color: #ff9fad;
 }
 
+.menu>div:first-child{
+	padding: 20px 10px; 
+}
+
 .list-group-item{
 	background-color: inherit;
 	color: #FFF;
@@ -149,7 +153,6 @@ div.list-group-item{
 }
 
 .avatar{
-	margin:20px 0px 20px 20px;
 	border-radius: 50%;
 	border: 3px solid #ff9fad;
 	width: 35%;
@@ -158,6 +161,11 @@ div.list-group-item{
 
 .avatar,.info{
 	display: inline-block;
+}
+
+.info{
+	position: relative;
+	left: 10px; 
 }
 
 .info1{
@@ -214,6 +222,18 @@ div.list-group-item{
 		font-size: 16px;
 	}
 
+	.avatar{
+		width: 42%;
+		height: 42%;
+	}
+	
+	.info1{
+		font-size: 18px;
+	}
+
+	.info2{
+		font-size: 12px;
+	}
 
 }
 
