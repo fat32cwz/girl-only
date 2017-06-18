@@ -201,5 +201,8 @@ th{
 	.right-container{
 		margin:20px 2% 30px 16%;
 	}
-
+	
+	tr{
+		font-size: 14px;
+	}
 }

@@ -13,6 +13,10 @@ textarea:focus{
 	outline: 0!important;
 }
 
+a:focus{
+	outline: 0!important;
+}
+
 input:focus{
 	outline: 0!important;
 }
