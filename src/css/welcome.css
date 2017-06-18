@@ -72,7 +72,7 @@ input:focus{
 	font-size: 20px;
 	border: 0;
 	border-radius: 8px;
-	background-color: #ff5f9b;
+	background-color: #fc8c9c;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	font-weight: bold;
@@ -99,7 +99,7 @@ input:focus{
 }
 
 #tab-list>li>a{
-	background-color: #ff5f9b;
+	background-color: #fc8c9c;
 	color: #fff;
 	margin-right: 0;
 	border: 1px solid #ee8e9c;
@@ -112,7 +112,7 @@ input:focus{
 
 #tab-list>.active>a{
 	background-color: #fff9fd;
-	color: #ff619c;
+	color: #fc8c9c;
 	transform: scale(1,1.1);
 	-ms-transform: scale(1,1.1);	/* IE 9 */
 	-webkit-transform: scale(1,1.1);	/* Safari 和 Chrome */
