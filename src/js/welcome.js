@@ -40,14 +40,15 @@ function login() {
              },
              success: function(resp){
              	if (resp.message=='success') {
-             		swal({
+/*             		swal({
                         title:'登录成功！',
                         type: 'success',
                         timer:2000,
                         background:'#fff',
                         confirmButtonColor: '#fc8c9c',
                     });
-             		setTimeout("window.location = 'index.html'",2000); 
+             		setTimeout("window.location = 'index.html'",2000); */
+                    window.location = "index.html";
              	}
              	else if (resp.message=='参数不合法') {
                     swal({
