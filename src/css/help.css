@@ -1,0 +1,56 @@
+#panel2{
+	width: 45%;
+	margin-top: 10%;
+	margin-left: 25%;
+}
+
+.panel-default>.panel-heading{
+	background-color: #cdb5ab;
+	padding:15px 30px;
+	color: #fff;
+	font-size: 25px;
+}
+
+.panel-heading>img{
+	margin-right: 10px;
+	position: relative;
+	bottom: 2px;
+}
+
+.panel-body{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10%;
+	color: #cdb5ab;
+	font-size: 20px;
+}
+
+.info-item{
+	margin: 10px 0px;
+}
+
+.info-item>.info-title{
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.info-item>.info-data{
+	overflow: hidden;
+}
+
+#change,#back{
+	background-color: #ff96ad;
+	color: #fff;
+	border-radius: 0;
+	padding: 5px 20px; 
+	margin-top: 20px;
+	border: 0;
+	font-size: 24px;
+	margin-right: 50px;
+}
+
+
+.info-item>input{
+	width: 180px;
+}
+
