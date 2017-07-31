@@ -10,6 +10,10 @@
         <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- SweetAlert -->
         <link rel="stylesheet" type="text/css" href="SweetAlert/dist/sweetalert2.min.css">
+        <!-- jQuery UI -->
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css" />
+        <!-- Fileinput -->
+        <link rel="stylesheet" type="text/css" href="fileinput/fileinput.min.css">
         <!--自己的样式文件 -->
         <link href="css/demo.css" rel="stylesheet">
         <link href="css/introduce.css" rel="stylesheet">        
@@ -23,7 +27,7 @@
         <div class="navbar navbar-default navbar-fixed-top">
             <img src="images/brand.png" alt="少女only商家中心" class="brand">
             <ul class="nav navbar-nav">
-                <li><a href="##"><span><img src="images/password.png" alt=""></span>
+                <li><a href="password.html"><span><img src="images/password.png" alt=""></span>
                     修改密码</a></li>
                 <li><a href="javascript:void(0)" onclick="logout();"><span><img src="images/logoff.png" alt=""></span>
                     退出登录</a></li>
@@ -31,7 +35,7 @@
         </div>
         <div class="menu">
             <div>
-                <img src="images/avatar.jpg" alt="avatar" class="avatar" width="85" height="85">
+                <img src="" alt="avatar" class="avatar" width="85" height="85">
                 <span class="info">
                     <ul>
                         <li class="info1">商家信息</li>
@@ -76,16 +80,16 @@
             <div class="panel panel-default" id="panel-1">
                 <div class="panel-heading">类目选择(1/3)</div>
                 <div class="panel-body">
-                    <div class="col-xs-4">
+                    <div class="col-xs-12">
                         <div class="list-group">
-                            <a href="" class="list-group-item typeOnSelect">LOLITA裙子</a>
-                            <a href="" class="list-group-item">汉服</a>
-                            <a href="" class="list-group-item">JK制服</a>
-                            <a href="" class="list-group-item">软妹服</a>
-                            <a href="" class="list-group-item">COS服</a>
+                            <a href="#" class="list-group-item typeOnSelect" data-type="1">LOLITA裙子</a>
+                            <a href="#" class="list-group-item" data-type="2">汉服</a>
+                            <a href="#" class="list-group-item" data-type="3">JK制服</a>
+                            <a href="#" class="list-group-item" data-type="4">软妹服</a>
+                            <a href="#" class="list-group-item" data-type="5">COS服</a>
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <!-- <div class="col-xs-4">
                         <div class="list-group">
                             <a href="" class="list-group-item typeOnSelect">子类目1</a>
                             <a href="" class="list-group-item">子类目2</a>
@@ -95,36 +99,21 @@
                             <a href="" class="list-group-item">子类目6</a>
                         </div>   
                     </div>
-                    <textarea class="col-xs-4" rows="18" cols="50">找不到！人家要自己手动创建(╯‵□′)╯︵┻━┻</textarea>
+                    <textarea class="col-xs-4" rows="18" cols="50" placeholder="找不到！人家要自己手动创建(╯‵□′)╯︵┻━┻"></textarea> -->
                 </div>
             </div>
             <div id="panel-2">
                 <div class="panel panel-default" id="panel-2-1">
                     <div class="panel-heading">宝贝展示信息(2/3)</div>
                     <div class="panel-body">
-                        <input type="text" placeholder="品牌">
-                        <input type="text" placeholder="商品">
-                        <input type="text" placeholder="材质">
-                        <select name="" id="" placeholder="尺码">
-                            <option>尺码</option>
-                            <option>S</option> 
-                            <option>M</option> 
-                            <option>L</option> 
-                        </select>
-                        <select name="" id="" title="裙型">
-                            <option>裙型</option>
-                            <option>1</option> 
-                            <option>2</option> 
-                            <option>3</option>
-                        </select>
-                        <select name="" id=""value="腰型">
-                            <option>腰型</option>
-                            <option>竹竿</option> 
-                            <option>纤细</option> 
-                            <option>水桶</option>
-                        </select>
-                        <input type="text" placeholder="裙长(cm)">
-                        <input type="text" placeholder="自定义">
+                        <input type="text" placeholder="品牌" id="brand">
+                        <input type="text" placeholder="商品" id="goodsName">
+                        <input type="text" placeholder="材质" id="texture">
+                        <input type="text" id="size" placeholder="尺码">
+                        <input type="text" id="skirtStyle" placeholder="裙型">
+                        <input type="text" id="waiseStyle" placeholder="腰型">
+                        <input type="text" placeholder="裙长(cm)" id="skirtLength">
+                        <input type="text" placeholder="自定义" id="userDefined">
                     </div>
                 </div>
                 <div class="panel panel-default" id="panel-2-2">
@@ -133,32 +122,38 @@
                         <div id="radio-group">
                             <form>
                                 宝贝类型
-                                <label><input type="radio" name="type" value="" checked> 全新</label>
+                                <label><input type="radio" name="type" value="" checked id="new"> 全新</label>
                                 <label><input type="radio" name="type" value=""> 二团及以后</label>
                             </form>
                             <form>
                                 预售类型
-                                <label><input type="radio" name="paytype" value="" checked> 现货</label>
-                                <label><input type="radio" name="paytype" value=""> 定金</label>
-                            </form> 
+                                <label><input type="radio" name="paytype" value="" checked id="spot"> 现货</label>
+                                <label><input type="radio" name="paytype" value="" id="spot1"> 定金</label>
+                            </form>
+                            <span class="deposit invisible"><input type="text" id="deposit">元</span> 
                         </div>
                         <div id="title-input">
-                            <input type="text" id="babyTitle" value="宝贝标题">
+                            <input type="text" id="babyTitle" placeholder="宝贝标题">
                         </div>
                         <div id="text-input">
-                            <textarea name="" id="babyInfo" cols="" rows="">宝贝介绍</textarea>
+                            <textarea name="" id="babyInfo" cols="" rows="" placeholder="宝贝介绍"></textarea>
                         </div>
                         <div id="pic-input">
-                            <span class="pic-group">
-                                <img src="" alt="" width="70" height="70">
-                                <img src="" alt="" width="70" height="70">
-                                <img src="" alt="" width="70" height="70">
+                            <div class="pic-group-1">
+                                <img src="" alt="" width="70" height="70" id="showPic0">
+                                <img src="" alt="" width="70" height="70" id="showPic1">
+                                <img src="" alt="" width="70" height="70" id="showPic2">
                                 <button class="btn btn-default" id="addPic_1"><span class="fa fa-plus"></span> 轮播图片</button>
-                            </span>
-                            <span class="pic-group" id="addLongImg">
-                                <img src="" alt="" width="70" height="70">
+                                <!-- <input id="hiddenupload" type="file" multiple class="hidden"> -->
+                                <!-- <a href="javascript:;" class="file">
+                                    <span class="fa fa-plus"></span> 轮播图片
+                                    <input class="btn btn-default" id="addPic_1" type="file" accept="image/png,image/gif" multiple/>
+                                </a> -->
+                            </div>
+                            <div class="pic-group-2" id="addLongImg">
+                                <img src="" alt="" width="70" height="70" id="showLongPic">
                                 <button class="btn btn-default" id="addPic_2"><span class="fa fa-plus"></span> 宝贝长图</button>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +161,7 @@
             <div class="panel panel-default" id="panel-3">
                 <div class="panel-heading">宝贝属性与规格(3/3)</div>
                 <div class="panel-body">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="good_sub">
                         <thead>
                             <tr>
                                 <th>颜色</th>
@@ -174,71 +169,67 @@
                                 <th>类型</th>
                                 <th>价格</th>
                                 <th>库存量</th>
-                                <th>商家ID</th>
                                 <th>商品ID</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text" onkeyup="this.value=this.value.replace(/D/g,'')" onafterpaste="this.value=this.value.replace(/D/g,'')"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
                             </tr>
+                            
+
                         </tbody>
                     </table>
+                    <div class="alert alert-warning hidden" id="tips">请注意，预售类型为<b>定金</b>的商品填写库存量无效。</div>
                     <div id="radio-group-2">
                         <form>
                             库存计数
-                            <label><input type="radio" name="type" value="" checked> 买家拍下减库存</label>
+                            <label><input type="radio" name="type" value="" checked id="count_at"> 买家拍下减库存</label>
                             <label><input type="radio" name="type" value=""> 买家付款减库存</label>
                         </form>
                         <form>
@@ -254,10 +245,18 @@
             </div>
             <div id="btn-group-bottom">
                 <button class="btn btn-default">(๑´ロ`๑)保存更改</button>
-                <button class="btn btn-default">现在就去发布(>▽<)</button>
+                <button class="btn btn-default" id="submit">现在就去发布(>▽<)</button>
             </div>                                                         
         </div>
-
+        <div id="comple-form-upload-dialogs">
+            <%--comple--%>
+            <div id="upload-dialog-1-text">
+                <input name="questionPhotos" id="upload-photos-1-text" type="file" multiple>
+            </div>
+            <div id="upload-dialog-2-text">
+                <input name="questionPhotos" id="upload-photos-2-text" type="file" multiple>
+            </div>
+        </div>
         
         <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
         <script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
@@ -269,6 +268,11 @@
             <script src="SweetAlert/lib/es6-promise.min.js"></script>
         <!-- SweetAlert -->
         <script src="js/welcome.js"></script>
+        <!-- jQuery UI -->
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <!-- Fileinput -->
+        <script src="fileinput/fileinput.min.js"></script>
+        <script src="fileinput/zh.js"></script>
         <!-- 自己的js -->
         <script src="js/demo.js"></script>        
         <script src="js/introduce.js"></script> 

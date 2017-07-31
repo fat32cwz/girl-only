@@ -68,7 +68,7 @@ tr{
 	color: #ac988f;
 }
 
-.createTime{
+.order-no{
 	border: none;
 }
 
@@ -104,7 +104,7 @@ th{
 }
 
 #allSelect{
-	padding-left:20px;	
+	padding-left:22px;	
 	color: #a29390;
 	font-size: 15px;
 }
@@ -144,7 +144,7 @@ th{
 
 }
 
-.pagination>li>a{
+/* .pagination>li>a{
 	background-color: #ffe4e9;
 	color: #c2aaa8;
 	border:none;
@@ -195,7 +195,7 @@ th{
 .pagination>li>a:active{
 	background-color: #ffe4e9;
 	color: #c2aaa8;
-}
+} */
 
 @media(max-width: 1440px){
 	.right-container{

@@ -34,6 +34,10 @@ tr{
 	color: #ac988f;
 }
 
+.goods-id{
+	margin-right: 40px;
+}
+
 
 .pagination>li>a{
 	background-color: #ffe4e9;

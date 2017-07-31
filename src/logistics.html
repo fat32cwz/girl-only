@@ -24,7 +24,7 @@
             <img src="images/brand.png" alt="少女only商家中心" class="brand">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="##">
+                    <a href="password.html">
                         <span><img src="images/password.png" alt=""></span>
                         修改密码
                     </a>
@@ -39,7 +39,7 @@
         </div>
         <div class="menu">
             <div>
-                <img src="images/avatar.jpg" alt="avatar" class="avatar" width="85" height="85">
+                <img src="" alt="avatar" class="avatar" width="85" height="85">
                 <span class="info">
                     <ul>
                         <li class="info1">商家信息</li>
@@ -88,11 +88,11 @@
                             <img src="images/car.png" alt="">
                             物流状态
                         </span>
-                        <li><a href="##">被取消的订单</a></li>
-                        <li><a href="##">未发货的订单</a></li>
-                        <li><a href="##">已发货的订单</a></li>
-                        <li><a href="##">发货中的订单</a></li>
-                        <li><a href="##" class="active">等待发货的订单</a></li>
+                        <li><a href="##" data-tab="5">被取消的订单</a></li>
+                        <li><a href="##" data-tab="4">未补款的订单</a></li>
+                        <li><a href="##" data-tab="3">已发货的订单</a></li>
+                        <li><a href="##"  data-tab="2">发货中的订单</a></li>
+                        <li><a href="##" class="active" id="waiting" data-tab="1">等待发货的订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,8 +102,8 @@
                         <thead>
                             <tr>
                                 <th class="cb"></th>
-                                <th class="createTime">创建时间</th>
-                                <th>订单编号</th>
+                                <th class="order-no">订单编号</th>
+                                <th>创建时间</th>
                                 <th>订单状态</th>
                                 <th>收货人</th>
                                 <th>买家昵称</th>
@@ -112,10 +112,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+<!--                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -124,8 +124,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -134,8 +134,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -144,8 +144,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -154,8 +154,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -164,8 +164,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -174,8 +174,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -184,8 +184,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -194,8 +194,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -204,8 +204,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -214,8 +214,8 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
@@ -224,24 +224,14 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
                                 <td>884475615917115857</td>
+                                <td>2017.02.11-00:20:34</td>
                                 <td>完成</td>
                                 <td>XXX</td>
                                 <td>simon</td>
                                 <td>快递</td>
                                 <td>这里是备注，这里是备注这里是备注...</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>2017.02.11-00:20:34</td>
-                                <td>884475615917115857</td>
-                                <td>完成</td>
-                                <td>XXX</td>
-                                <td>simon</td>
-                                <td>快递</td>
-                                <td>这里是备注，这里是备注这里是备注...</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -258,7 +248,7 @@
                     </div>
                     <div id="pagination">
                         <ul class="pagination pagination">
-                          <li><a href="#">上一页</a></li>
+                          <!-- <li><a href="#">上一页</a></li>
                           <li class="active"><a href="" class="disableLink">1</a></li>
                           <li><a href="#">2</a></li>
                           <li><a href="#">3</a></li>
@@ -267,7 +257,7 @@
                           <li><a href="#">7</a></li>
                           <li><a href="#">8</a></li>
                           <li><a href="#">下一页</a></li>
-                          <li><a href="#">第&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                          <li><a href="#">第&nbsp;&nbsp;&nbsp;&nbsp;页</a></li> -->
                       </ul>
                   </div>
               </div>
@@ -276,17 +266,21 @@
 
         
         <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
-        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
         <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="Bootstrap/js/bootstrap.min.js"></script>
+
         <!-- SweetAlert -->
             <script src="SweetAlert/dist/sweetalert2.min.js"></script>
             <!-- for IE support -->
             <script src="SweetAlert/lib/es6-promise.min.js"></script>
         <!-- SweetAlert -->
         <script src="js/welcome.js"></script>
+
+        <!-- pagination.js -->
+        <script src="js/jquery.pagination.js"></script>         
         <!-- 自己的js -->
         <script src="js/demo.js"></script>        
-        <script src=""></script> 
+        <script src="js/logistics.js"></script> 
     </body>
 </html>

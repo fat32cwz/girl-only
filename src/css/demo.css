@@ -204,6 +204,101 @@ div.list-group-item{
 	display: block;
 }
 
+.swal2-modal{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+}
+
+/* 分页导航样式 */
+
+.pagination>a,.pagination>span{
+	position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #c2aaa8;
+    text-decoration: none;
+    background-color: #ffe4e9;
+    border: none;
+    margin:0px 2px;
+}
+
+.pagination>a,.pagination>span,.pagination>input{
+	float: left;
+}
+
+
+
+.pagination>li>a{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+	border:none;
+	margin:0px 2px;
+}
+
+.pagination>.active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+
+.pagination>.active:link{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active:visited{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>.active:active{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>a:link{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>a:visited{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>a:hover{
+	background-color: #ff94ac;
+	color: #FFF;
+}
+
+.pagination>a:active{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.pagination>a:focus{
+	background-color: #ffe4e9;
+	color: #c2aaa8;
+}
+
+.jump-ipt{
+	width: 50px;
+	padding: 4px 12px;
+	color: #c2aaa8;
+}
+
+/* 分页导航样式 */
+
+
+
+
 @media(max-width: 1440px){
 	.brand{
 		margin-top: 10px;

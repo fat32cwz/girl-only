@@ -81,7 +81,7 @@ th{
 }
 
 #allSelect{
-	padding-left:14px;	
+	padding-left:22px;	
 	color: #a29390;
 	font-size: 15px;
 }
@@ -124,14 +124,14 @@ th{
 	width: 130px;
 }
 
-#plzk{
+/*#plzk{
 	background-color: #dccac8;
 	color: #FFF;
 	padding: 5px 20px;
 	font-size: 15px;
 	width: 130px;
 }
-
+*/
 .pagination>li>a{
 	background-color: #ffe4e9;
 	color: #c2aaa8;

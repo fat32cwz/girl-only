@@ -23,7 +23,7 @@
         <div class="navbar navbar-default navbar-fixed-top">
             <img src="images/brand.png" alt="少女only商家中心" class="brand">
             <ul class="nav navbar-nav">
-                <li><a href="##"><span><img src="images/password.png" alt=""></span>
+                <li><a href="password.html"><span><img src="images/password.png" alt=""></span>
                     修改密码</a></li>
                 <li><a href="javascript:void(0)" onclick="logout();"><span><img src="images/logoff.png" alt=""></span>
                     退出登录</a></li>
@@ -31,7 +31,7 @@
         </div>
         <div class="menu">
             <div>
-                <img src="images/avatar.jpg" alt="avatar" class="avatar" width="85" height="85">
+                <img src="" alt="avatar" class="avatar" width="85" height="85">
                 <span class="info">
                     <ul>
                         <li class="info1">商家信息</li>
@@ -76,14 +76,15 @@
             <div class="goods-header">
                 <div class="header">
                     <ul class="nav nav-tabs">
-                        <li><a href="##" class="active">当前在售商品</a></li>
-                        <li><a href="##">待付尾款商品</a></li>
+                        <li><a href="##" class="active" id="onsale" data-tab="1">现货在售商品</a></li>
+                        <li><a href="##" id="reserving" data-tab="2">定金在售商品</a></li>
+                        <li><a href="##" id="final" data-tab="3">待付尾款商品</a></li>
                     </ul>
                 </div>
             </div>
             <div class="goods-body">
-                <div class="row no-margin">
-                    <div class="goods"> 
+                <div class="row no-margin" id="goods-container">
+                   <!--  <div class="goods"> 
                         <img src="images/girl.jpg" alt="" class="goods-img">
                         <div class="goods-info"> 
                             <div class="goods-info-item">
@@ -103,142 +104,17 @@
                                 <span class="goods-info-data">5</span>
                             </div>
                             <div class="goods-info-item" id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
+                                <button class="btn  btn-default" type="button" id="gbwk">关闭待定尾款</button>
+                                <button class="btn  btn-default" type="button" id="xj">下架商品</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="goods">
-                        <img src="images/girl.jpg" alt="" class="goods-img">
-                        <div class="goods-info">
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">名&#x3000称</span>
-                                <span class="goods-info-data">XXX家裙子</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">价&#x3000格</span>
-                                <span class="goods-info-data">￥233.00</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">销&#x3000量</span>
-                                <span class="goods-info-data">22</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">库&#x3000存</span>
-                                <span class="goods-info-data">5</span>
-                            </div>
-                            <div id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods">
-                        <img src="images/girl.jpg" alt="" class="goods-img">
-                        <div class="goods-info">
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">名&#x3000称</span>
-                                <span class="goods-info-data">XXX家裙子</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">价&#x3000格</span>
-                                <span class="goods-info-data">￥233.00</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">销&#x3000量</span>
-                                <span class="goods-info-data">22</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">库&#x3000存</span>
-                                <span class="goods-info-data">5</span>
-                            </div>
-                            <div id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods">   
-                        <img src="images/girl.jpg" alt="" class="goods-img">
-                        <div class="goods-info">
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">名&#x3000称</span>
-                                <span class="goods-info-data">XXX家裙子</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">价&#x3000格</span>
-                                <span class="goods-info-data">￥233.00</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">销&#x3000量</span>
-                                <span class="goods-info-data">22</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">库&#x3000存</span>
-                                <span class="goods-info-data">5</span>
-                            </div>
-                            <div id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods">   
-                        <img src="images/girl.jpg" alt="" class="goods-img">
-                        <div class="goods-info">
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">名&#x3000称</span>
-                                <span class="goods-info-data">XXX家裙子</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">价&#x3000格</span>
-                                <span class="goods-info-data">￥233.00</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">销&#x3000量</span>
-                                <span class="goods-info-data">22</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">库&#x3000存</span>
-                                <span class="goods-info-data">5</span>
-                            </div>
-                            <div id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods">
-                        <img src="images/girl.jpg" alt="" class="goods-img">
-                        <div class="goods-info">
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">名&#x3000称</span>
-                                <span class="goods-info-data">XXX家裙子</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">价&#x3000格</span>
-                                <span class="goods-info-data">￥233.00</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">销&#x3000量</span>
-                                <span class="goods-info-data">22</span>
-                            </div>
-                            <div class="goods-info-item">
-                                <span class="goods-info-title">库&#x3000存</span>
-                                <span class="goods-info-data">5</span>
-                            </div>
-                            <div id="button-group">
-                                <button class="btn  btn-default" type="button" id="plfh">关闭待定尾款</button>
-                                <button class="btn  btn-default" type="button" id="plzk">下架商品</button>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="goods-footer">
                 <div class="text-center">
                     <ul class="pagination pagination">
-                      <li><a href="#">上一页</a></li>
+                      <!-- <li><a href="#">上一页</a></li>
                       <li class="active"><a href="" class="disableLink">1</a></li>
                       <li><a href="#">2</a></li>
                       <li><a href="#">3</a></li>
@@ -247,7 +123,7 @@
                       <li><a href="#">7</a></li>
                       <li><a href="#">8</a></li>
                       <li><a href="#">下一页</a></li>
-                      <li><a href="#">第&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                      <li><a href="#">第&nbsp;&nbsp;&nbsp;&nbsp;页</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -255,15 +131,18 @@
 
         
         <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
-        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
         <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="Bootstrap/js/bootstrap.min.js"></script>
+        
         <!-- SweetAlert -->
             <script src="SweetAlert/dist/sweetalert2.min.js"></script>
             <!-- for IE support -->
             <script src="SweetAlert/lib/es6-promise.min.js"></script>
         <!-- SweetAlert -->
-        <script src="js/welcome.js"></script>
+
+        <!-- pagination.js -->
+        <script src="js/jquery.pagination.js"></script>       
         <!-- 自己的js -->
         <script src="js/demo.js"></script>        
         <script src="js/onsale.js"></script>

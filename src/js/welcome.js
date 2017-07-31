@@ -5,13 +5,13 @@ $.ajaxSetup({
 	crossDomain: true 
 });
 
-jQuery.support.cors = true;
 
 $(function () {
 	inputHover();
 
 	login();
 
+    keyLogin();
 
 });
 
@@ -49,6 +49,16 @@ function login() {
                     });
              		setTimeout("window.location = 'index.html'",2000); */
                     window.location = "index.html";
+                    var user_id = resp.data.user_id;
+                    var authedshops_id = new Array();
+                    for (var i = 0; i < resp.data.shops.length; i++) {
+                        if (resp.data.shops[i].authed=="yes") {
+                            authedshops_id[i] = resp.data.shops[i].id;                           
+                        }
+                    }
+                    var id =resp.data.shops
+                    sessionStorage.user_id = user_id;
+                    sessionStorage.authedshops_id = authedshops_id;
              	}
              	else if (resp.message=='参数不合法') {
                     swal({
@@ -85,6 +95,13 @@ function login() {
 	}); 
 
 	
+}
+
+function keyLogin(){
+    $("body").keydown(function (event) {
+        if (event.keyCode==13)  //回车键的键值为13
+        $("#login").click(); //调用登录按钮的登录事件
+    });
 }
 
 
