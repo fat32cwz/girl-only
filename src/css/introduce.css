@@ -97,7 +97,7 @@ body{
 }
 
 #radio-group>form:first-child{
-	margin-right: 5%;
+	margin-right: 4%;
 }
 
 #radio-group>form>label{
@@ -320,4 +320,10 @@ body{
 
 .pink{
 	background-color: #ffa0ae;
+}
+
+.red{
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 16px;
 }

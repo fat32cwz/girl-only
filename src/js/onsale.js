@@ -1,6 +1,5 @@
 $(function(){
 
-
 	showOnsaleGoods(1);     //现货出售商品展示
 
 
@@ -127,7 +126,7 @@ function showReservingGoods(pages_now) {
 					endRange = (pages_now==pages_total?data_total:pages_now*showdata);
 					console.log(data_total,pages_total,startRange,endRange);
 					if($(".active").attr("data-tab")=="2"){
-			       			$("#goods-container").empty();
+			       		$("#goods-container").empty();
 		       		}
 	       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
 	       				goods_id = resp.data[j].id;
@@ -138,8 +137,10 @@ function showReservingGoods(pages_now) {
 	       				order_goods_sum = resp.data[j].order_goods_sum;
 	       				goods_pic_default_pic_url = resp.data[j].goods_pic_default_pic_url;
 	       				status = "R";
+	       				var date = new Date(resp.data[j].status_end_at);
+		       			status_end_at = date.toLocaleString();	           //结束时间
 	       				if($(".active").attr("data-tab")=="2"){
-		       				createShopsCard(goods_id,shop_id,name,price,order_goods_sum,ska,status,goods_pic_default_pic_url);     //生成商品卡片
+		       				createShopsCard(goods_id,shop_id,name,price,order_goods_sum,ska,status,goods_pic_default_pic_url,status_end_at);     //生成商品卡片
 		       				createPagination(pages_now,pages_total,status);           //分页
 	       				}
 	       			}
@@ -171,7 +172,7 @@ function showFinalGoods(pages_now) {
 					endRange = (pages_now==pages_total?data_total:pages_now*showdata);
 					console.log(data_total,pages_total,startRange,endRange);
 					if($(".active").attr("data-tab")=="3"){
-			       			$("#goods-container").empty();
+			       		$("#goods-container").empty();
 		       		}
 	       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
 	       				goods_id = resp.data[j].id;
@@ -181,9 +182,11 @@ function showFinalGoods(pages_now) {
 	       				ska = resp.data[j].ska;
 	       				order_goods_sum = resp.data[j].order_goods_sum;
 	       				goods_pic_default_pic_url = resp.data[j].goods_pic_default_pic_url;
+	       				var date = new Date(resp.data[j].status_end_at);
+		       			status_end_at = date.toUTCString();	                              //结束时间
 	       				status = "F";
 	       				if($(".active").attr("data-tab")=="3"){
-		       				createShopsCard(goods_id,shop_id,name,price,order_goods_sum,ska,status,goods_pic_default_pic_url);     //生成商品卡片
+		       				createShopsCard(goods_id,shop_id,name,price,order_goods_sum,ska,status,goods_pic_default_pic_url,status_end_at);     //生成商品卡片
 		       				createPagination(pages_now,pages_total,status);           //分页
 	       				}
 	       			}
@@ -197,7 +200,7 @@ function showFinalGoods(pages_now) {
 
 
 
-function createShopsCard(i,si,n,p,o,s,status,url) {                          //生成商品卡片
+function createShopsCard(i,si,n,p,o,s,status,url,end) {                          //生成商品卡片
 	if(status=="O"){
 		$("#goods-container").append('<div class="goods"> '+
 	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
@@ -255,6 +258,7 @@ function createShopsCard(i,si,n,p,o,s,status,url) {                          //�
 	            '<button class="btn  btn-default xj" type="button" id="xj">下架商品</button>'+ 
 	        '</div>'+
 	    '</div>'+
+	    '<a href="##" onclick="endTimeReset(this);"><div class="top_bar">结束时间：'+end+'</div></a>'+
 	  '</div>');
 
 	}
@@ -281,17 +285,22 @@ function createShopsCard(i,si,n,p,o,s,status,url) {                          //�
 	            '<span class="goods-info-data">'+s+'</span>'+
 	        '</div>'+
 	        '<div class="goods-info-item" id="button-group">'+
-	            '<button class="btn  btn-default gbwk" type="button" id="gbwk" disabled>关闭定金</button>'+
+	            '<button class="btn  btn-default kw" type="button" id="kw">开放尾款</button>'+
 	            '<button class="btn  btn-default xj" type="button" id="xj">下架商品</button>'+ 
 	        '</div>'+
 	    '</div>'+
+	    '<a href="##" onclick="endTimeReset(this);"><div class="top_bar">结束时间：'+end+'</div></a>'+
 	  '</div>');
 	}	
 	adjustgoodsimg();     //商品图片宽高比例调整
 	adjustgoodsinfo();	  //商品卡片信息容器调整
 
-	reserved();            //关闭待定尾款
+	reserved();            //关闭定金
 	offsale();             //商品下架
+	final();			   //开放尾款
+
+	
+
 
 }
 
@@ -399,6 +408,49 @@ function offsale() {                   //商品下架
 	});
 }
 
+function final() {
+	$(".kw").click(function () {
+		var user_id =sessionStorage.user_id;
+		var id = $(this).parent().parent().find(".goods-id").text();
+		var shop_id = $(this).parent().parent().find(".shop-id").text();
+		var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/final";
+		swal({
+			title: '你确定为该商品开尾款吗？',
+			text: "操作提示!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: '确定',
+			cancelButtonText: '取消'
+		}).then(function(isConfirm){
+			if(isConfirm){
+				$.ajax({
+					url: url,
+			       	type:"PATCH",   	
+			       	success:function (resp) {
+			       		if (resp.message=="success") {
+			       			swal({
+			       				title:'开尾款成功!',
+			       				text:'操作提示',
+			       				type:'success'
+			       			});	
+			       			$(".active").trigger("click");
+			       		}
+			       		else{
+			       			swal({
+			       				title:'操作失败！',
+			       				text: resp.message,
+			       				type: 'error'
+			       			});
+			       		}
+			       	}
+				});	
+			}
+		});
+	});
+}
+
 
 function createPagination(pages_now,pages_total,status) {                     //新建分页导航
 	$(".text-center").html('<ul class="pagination pagination"></ul>');
@@ -470,3 +522,60 @@ function createPagination(pages_now,pages_total,status) {                     //
 
 }
 
+function endTimeReset(obj) {
+	var user_id = sessionStorage.user_id;
+	var shop_id = sessionStorage.authedshops_id[0];
+	var goods_id = $(obj).parent().find(".goods-id").text();
+	console.log(goods_id);
+	var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+goods_id+"/status_end_at";
+	swal({
+		title: '修改结束时间',
+		text: '提示：请谨慎操作！',
+		html: '<h4>提示：请谨慎操作！</h4>'+'<input class="endtimeinput" type="datetime-local" autofocus>',
+		showCancelButton: true,
+		type:'warning',
+		confirmButtonText: '确认',
+  		cancelButtonText: '取消',
+	}).then(function(isConfirm) {
+		if (isConfirm) {
+			status_end_at = $(".endtimeinput").val();
+			result = new Date(status_end_at).toISOString();
+
+			console.log(result);
+			$.ajax({
+				url: url,
+		       	type:"PATCH",
+		       	data:{
+		       		status_end_at:result,
+		       	}, 	
+		       	success:function (resp) {
+		       		if (resp.message=="success") {
+		       			swal({
+		       				title:'修改成功!',
+		       				text:'操作提示',
+		       				type:'success'
+		       			});	
+		       			$(".active").trigger("click");
+		       		}
+		       		else{
+		       			swal({
+		       				title:'修改失败！',
+		       				text: resp.message,
+		       				type: 'error'
+		       			});
+		       		}
+		       	}
+			});	
+		}
+	});
+}
+
+function ISOtoDate(now) {
+	var   year=now.getFullYear();     
+	var   month=now.getMonth()+1;     
+	var   date=now.getDate();     
+	var   hour=now.getHours();     
+	var   minute=now.getMinutes();     
+	var   second=now.getSeconds();     
+	return   year+"/"+month+"/"+date+"   "+hour+":"+minute+":"+second;   
+}

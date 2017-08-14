@@ -498,7 +498,7 @@ function batchDeliver() {                                 //批量发货
 				},
 				success:function (resp) {
 					if (resp.message=="success") {
-
+						alert('发货成功');
 					}
 					else{
 						alert("订单"+order_id+"发货失败！");

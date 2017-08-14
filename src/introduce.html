@@ -228,15 +228,15 @@
                     <div class="alert alert-warning hidden" id="tips">请注意，预售类型为<b>定金</b>的商品填写库存量无效。</div>
                     <div id="radio-group-2">
                         <form>
-                            库存计数
-                            <label><input type="radio" name="type" value="" checked id="count_at"> 买家拍下减库存</label>
-                            <label><input type="radio" name="type" value=""> 买家付款减库存</label>
-                        </form>
-                        <form>
                             上架时间
                             <label><input type="radio" name="paytype" value="" checked> 立刻上架</label>
                             <label><input type="radio" name="paytype" value=""> 定时上架</label>
                             <label><input type="radio" name="paytype" value=""> 放入仓库</label>     
+                        </form>
+                        <form id="count_type">
+                            库存计数
+                            <label><input type="radio" name="type" value="" checked id="count_at"> 买家拍下减库存</label>
+                            <label><input type="radio" name="type" value=""> 买家付款减库存</label>
                         </form>
                         <button class="btn btn-default" id="addSize"><span class="fa fa-plus"></span> 新增规格</button> 
                     </div>

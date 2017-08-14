@@ -2,10 +2,11 @@ $(function () {
 
 	showRecentGoods(1);     //近三个月订单加载
 
-
 	tabChange();
 
 	allSelect();
+
+	batchDeliver();                 //批量发货功能
 
 });
 
@@ -102,7 +103,7 @@ function showRecentGoods(pages_now) {              //近三个月订单加载
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -111,10 +112,11 @@ function showRecentGoods(pages_now) {              //近三个月订单加载
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "1";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="1"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -161,7 +163,7 @@ function showPayNowGoods(pages_now) {                    //等待买家付现货
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -170,10 +172,11 @@ function showPayNowGoods(pages_now) {                    //等待买家付现货
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "2";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="2"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -221,7 +224,7 @@ function showPayDepositGoods(pages_now) {             //等待买家付定金
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -230,10 +233,11 @@ function showPayDepositGoods(pages_now) {             //等待买家付定金
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "3";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="3"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -281,7 +285,7 @@ function showPayFinalGoods(pages_now) {            //等待买家付尾款
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -290,10 +294,11 @@ function showPayFinalGoods(pages_now) {            //等待买家付尾款
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "4";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="4"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -340,7 +345,7 @@ function showWaitingGoods(pages_now) {                 //等待发货
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -349,10 +354,11 @@ function showWaitingGoods(pages_now) {                 //等待发货
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "5";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="5"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -400,7 +406,7 @@ function showDeliveredGoods(pages_now) {               //商家已发货
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -409,10 +415,11 @@ function showDeliveredGoods(pages_now) {               //商家已发货
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "6";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="6"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -459,7 +466,7 @@ function showRefundingGoods(pages_now) {                //退货中
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -468,10 +475,11 @@ function showRefundingGoods(pages_now) {                //退货中
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "7";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="7"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -519,7 +527,7 @@ function showSuccessGoods(pages_now) {                //交易成功
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -528,10 +536,11 @@ function showSuccessGoods(pages_now) {                //交易成功
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "8";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="8"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -578,7 +587,7 @@ function showClosedGoods(pages_now) {             //关闭的订单
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -587,10 +596,11 @@ function showClosedGoods(pages_now) {             //关闭的订单
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "9";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="9"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -636,7 +646,7 @@ function showThreeMonthsAgoOrders(pages_now) {                  //	三个月前�
 			       			$("tbody").empty();
 		       			}
 		       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
-		       				goods_id = resp.data[j].order_goods[0].goods_id;						//商品ID
+		       				goods_name = resp.data[j].order_goods[0].goods_name;						//商品名称
 		       				goods_price = resp.data[j].order_goods[0].goods_price;					//单价
 		       				order_goods_count = resp.data[j].order_goods[0].order_goods_count;      //数量
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
@@ -645,10 +655,11 @@ function showThreeMonthsAgoOrders(pages_now) {                  //	三个月前�
 		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
+		       				order_id = resp.data[j].order_no;                        //订单编号
 		       				tab = "10";
 		       				//console.log(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);
 		       				if($(".screening-active").attr("data-tab")=="10"){
-			       				createGoodsRow(goods_id,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at);     //生成商品出售行
+			       				createGoodsRow(goods_name,goods_price,order_goods_count,customer_nickname,status,actual_payment,created_at,order_id);     //生成商品出售行
 			       				createPagination(pages_now,pages_total,tab);           //分页
 		       				}
 		       			}
@@ -707,7 +718,7 @@ function statusNumToStatus(statusNum) {
 }
 
 
-function createGoodsRow(a,b,c,d,e,f,g) {
+function createGoodsRow(a,b,c,d,e,f,g,h) {
 	$("tbody").append('<tr>'+
                         '<td><input type="checkbox"></td>'+
                         '<td>'+a+'</td>'+
@@ -717,6 +728,7 @@ function createGoodsRow(a,b,c,d,e,f,g) {
                         '<td>'+e+'</td>'+
                         '<td>'+f+'</td>'+
                         '<td>'+g+'</td>'+
+                        '<td class="hidden">'+h+'</td>'+
                     '</tr>');
 }
 
@@ -927,6 +939,37 @@ function allSelect(){
 		else if(state==false){
 			$("tbody input").prop("checked","");
 		}
+
+	});
+}
+
+
+function batchDeliver() {                                 //批量发货
+	$("#plfh").click(function () {
+		var checkedArray = $("td input:checked");
+		Array.from(checkedArray);
+		for (var i = 0; i < checkedArray.length; i++) {
+			order_id = $(checkedArray[i]).parent().parent().find(".hidden").text();
+			name = $(checkedArray[i]).parent().next().next().next().next().next().text();
+			console.log(order_id,name);
+			$.ajax({
+				url: "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/orders/"+order_id+"/delivery",
+				type:"PATCH",
+				data:{
+					name: name,
+					delivery_no: order_id
+				},
+				success:function (resp) {
+					if (resp.message=="success") {
+						alert('发货成功');
+					}
+					else{
+						alert("订单"+order_id+"发货失败！");
+					}
+				}
+			});
+		}
+
 
 	});
 }

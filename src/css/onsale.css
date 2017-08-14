@@ -52,7 +52,7 @@ body{
 
 
 .goods-body>.row{	
-	padding: 0px 20px;
+	padding: 20px 20px;
 }
 
 
@@ -64,6 +64,7 @@ body{
 	margin-left:1.5%;
 	display: inline-block;
 	background-color: #fff;
+	position: relative;
 }
 
 .goods-body{
@@ -129,6 +130,24 @@ body{
 
 .goods-footer{
 	margin-top: 50px;
+}
+
+.top_bar{
+	position: absolute;
+	left: 0;	
+	top: -42px;
+	width: 101%;
+	background-color: #ffa6bb;	
+	height: 40px;
+	padding: 10px 20px;
+	color: #f9f9f9;
+	font-family: Microsoft YaHei;
+	border: 2px solid #fbdbdc;
+	border-bottom: none;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	text-align: center;
+	font-size: 16px;
 }
 
 /* 分页导航样式 */

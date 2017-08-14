@@ -116,7 +116,12 @@ function createNewGoods() {
 		console.log(properties);
 		goods_subs = getTableData();   //返回JSON对象
 		console.log(goods_subs);
-		count_at = ($("#count_at").prop("checked")==true)?"order":"payment";
+        if($("#spot").prop("checked")==true){
+            count_at = ($("#count_at").prop("checked")==true)?"order":"payment";
+        }else{
+            count_at = "payment";
+        }
+		
 		deposit = $("#deposit").val();
         
       
@@ -323,10 +328,12 @@ function showDeposit() {
 		if ($("#spot").prop("checked")==true) {
 			$(".deposit").addClass("invisible");
             $("#tips").addClass("hidden");
+            $("#count_type").removeClass("hidden");
 		}
 		else if($("#spot1").prop("checked")==true){
 			$(".deposit").removeClass("invisible");
             $("#tips").removeClass("hidden");
+            $("#count_type").addClass("hidden");
 		}
 	});
 }
@@ -375,7 +382,7 @@ function initstaupload() {
         showRemove: true, // 显示移除按钮
         showPreview: true, // 是否显示预览
         showCaption: false,// 是否显示标题
-        dropZoneTitle:"最大可加入3张图片,请一次性添加<br>支持拖拽添加<br>",
+        dropZoneTitle:"最大可加入5张图片,请一次性添加<br>支持拖拽添加<br><div class='red'>提醒：第一张选择的将作为商品默认图片</div>",
         browseClass: "btn btn-primary", // 按钮样式
         dropZoneEnabled: true,// 是否显示拖拽区域
         fileActionSettings: {showUpload: false},
@@ -408,7 +415,7 @@ function initstaupload() {
             actionEnter: '<button type="button" class="kv-file-zoom {zoomClass}" title="enter">{zoomIcon}</button>'
         },
         maxFileSize: 10240,
-        maxFileCount: 3, // 表示允许同时上传的最大文件个数
+        maxFileCount: 5, // 表示允许同时上传的最大文件个数
         enctype: 'multipart/form-data',
         validateInitialCount: true,
         overwriteInitial: true,
