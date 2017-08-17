@@ -64,7 +64,7 @@ textarea:focus{
 	margin-left: 50px;
 }
 
-#saveChanges{
+#saveChanges,#createShop{
 	background-color: #ff96ad;
 	color: #fff;
 	border-radius: 0;
@@ -75,6 +75,6 @@ textarea:focus{
 	font-size: 18px;
 }
 
-#tips{
+#tips,#tips2{
 	width:60%;
 }

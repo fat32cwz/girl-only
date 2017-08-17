@@ -14,34 +14,36 @@ $(function () {
 })		
 
 function getAutInfo() {
-	if(sessionStorage.authedshops_id==""||sessionStorage.authedshops_id==null){
-		$("#panel").addClass("hidden");
-		$("#new").removeClass("hidden");
-	}
-	for (var i = 0; i < sessionStorage.authedshops_id.length; i++){
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/authentication";
-		$.ajax({
-			url: url,
-	       	type:"GET",  
-	     	success:function (resp) {
-	     		if(resp.message == 'success'){
-	     			name = resp.data.name;
-	     			phone = resp.data.phone;
-	     			no = resp.data.no;
-	     			address = resp.data.address;
-	     			auth_at = resp.data.auth_at;
-	     			$("#name").text(name);
-	     			$("#phone").text(phone);
-	     			$("#no").text(no);
-	     			$("#address").text(address);
-	     			$("#auth_at").text(auth_at);
-	     		}
-	     		else{
-	     			alert("认证信息请求失败!"+resp.message);
-	     		}
-	     	}
-		});
-	}
+	url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/authentication";
+	$.ajax({
+		url: url,
+       	type:"GET",  
+     	success:function (resp) {
+     		if(resp.message == 'success'){
+     			name = resp.data.name;
+     			phone = resp.data.phone;
+     			no = resp.data.no;
+     			address = resp.data.address;
+     			alipay_account = resp.data.alipay_account;
+     			time = resp.data.created_at;
+     			auth_at = new Date(time).toLocaleString();
+     			$("#name").text(name);
+     			$("#phone").text(phone);
+     			$("#no").text(no);
+     			$("#address").text(address);
+     			$("#auth_at").text(auth_at);
+     			$("#alipay_account").text(alipay_account);
+
+
+     			$("#panel").removeClass("hidden");
+				$("#new").addClass("hidden");
+     		}
+     		else{
+ 				$("#panel").addClass("hidden");
+				$("#new").removeClass("hidden");
+     		}
+     	}
+	});
 }
 
 function createAut() {
@@ -58,6 +60,14 @@ function createAut() {
 			swal({
 				title:"提交失败！",
 				text:"电话不能为空！",
+				type:"warning"
+			});
+			return;
+		}
+		if($("#new_alipay_account").val()==""||$("#new_alipay_account").val()== null){
+			swal({
+				title:"提交失败！",
+				text:"支付宝账号不能为空！",
 				type:"warning"
 			});
 			return;
@@ -90,7 +100,8 @@ function createAut() {
 		phone = $("#new_phone").val();
 		no = $("#new_no").val();
 		address = $("#new_address").val();
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/auths";
+		alipay_account = $("#new_alipay_account").val();
+		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/auths";
 		$.ajax({
 			url:url,
 			type:"POST",
@@ -98,7 +109,8 @@ function createAut() {
 				name:name,
 				phone:phone,
 				no:no,
-				address:address
+				address:address,
+				alipay_account:alipay_account
 			},
 			success:function (resp) {
 				if (resp.message=="success") {
@@ -107,9 +119,14 @@ function createAut() {
 						text:"操作提示",
 						type:"success"
 					});
+					getAutInfo();
 				}
 				else{
-					alert("创建认证失败！"+resp.message);
+					swal({
+						title:"创建认证失败！",
+						text:"操作提示",
+						type:"error"
+					});
 				}
 			}
 		});

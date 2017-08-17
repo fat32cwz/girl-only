@@ -281,6 +281,8 @@ function getProperties() {
 	skirtStyle = $("#skirtStyle").val();
 	waiseStyle = $("#waiseStyle").val();
 	skirtLength = $("#skirtLength").val();
+    kind = $("#kind").val();
+    plusMaterial = $("#plusMaterial").val();
 	userDefined = ($("#userDefined").val()=="")?"无":$("#userDefined").val();
 	var aa = [
 		{
@@ -311,6 +313,14 @@ function getProperties() {
 			key:"裙长(cm)",
 			value:skirtLength
 		},
+        {
+            key:"面料",
+            value:plusMaterial
+        },
+        {
+            key:"种类",
+            value:kind
+        },
 		{
 			key:"自定义",
 			value:userDefined

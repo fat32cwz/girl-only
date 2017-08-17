@@ -13,18 +13,24 @@ $(function () {
 
 	dialogClose();		//绑定弹窗关闭事件
 
+	createShop();        //创建店铺
 	
 });
 
 
 function getBaseInfo() {                                                  //加载基本信息
-	if(sessionStorage.authedshops_id==""||sessionStorage.authedshops_id==null){
-		$("#tips").removeClass("hidden");
-		$(".infocontainer").css("margin-top","3%");
+	if (sessionStorage.shops_id==""||sessionStorage.shops_id==null) {
 		$("#saveChanges").addClass("hidden");
-	}
-	for (var i = 0; i < sessionStorage.authedshops_id.length; i++){
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i];
+		$("#tips2").removeClass("hidden");
+		$("#createShop").removeClass("hidden");
+		$(".infocontainer").css("margin-top","3%");	
+	}else{
+		if(sessionStorage.authedshops_id==""||sessionStorage.authedshops_id==null){
+			$("#tips2").addClass("hidden");
+			$("#tips").removeClass("hidden");
+			$(".infocontainer").css("margin-top","3%");
+		}
+		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
 		$.ajax({
 			url: url,
 	       	type:"GET",  
@@ -48,6 +54,7 @@ function getBaseInfo() {                                                  //加�
 	     	}
 		});
 	}
+	
 }
 
 function textLengthCount() {                      //文本计数器
@@ -240,3 +247,63 @@ function fileinput1() {
 
 }
 
+
+function createShop() {
+	$("#createShop").click(function () {
+	if ($('#description').val().length>200) {
+		swal({
+			title:"店铺介绍字数超过限制(200个)",
+			text:"操作提示",
+			type:"warning"
+		});
+		return;
+	}
+	swal({
+		title: '你确定要创建店铺吗？',
+		text: "操作提示",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: '确定',
+		cancelButtonText: '取消'
+	}).then(function(isConfirm){
+		if(isConfirm){
+			name = $("#name").text();
+			description = $("#description").val();
+			var files = $('#upload-photos-1-text').fileinput('getFileStack');
+			var data = new FormData();
+			data.append("name",name);
+			data.append("description",description);
+			data.append("logo_pic",files[0]);
+			url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops";
+			$.ajax({
+				url: url,
+		       	type:"POST",
+		       	data:data,
+		       	processData: false,  // 不处理数据
+        		contentType: false,  // 不设置内容类型
+		     	success:function (resp) {
+		     		if(resp.message == 'success'){
+		     			swal({
+		     				title:"创建成功！",
+		     				text:"操作提示",
+		     				type:"success"
+		     			});
+		     			sessionStorage.shops_id = resp.data.insert_id;
+		     			getBaseInfo();                //更新页面
+		     		}
+		     		else{
+		     			swal({
+		     				title:"创建失败！",
+		     				text:resp.message,
+		     				type:"error"
+		     			});
+		     		}
+		     	}
+			});
+		}
+	});
+});
+
+}

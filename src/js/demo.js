@@ -30,6 +30,9 @@ function logout() {
 			    url: "http://server.shaonvonly.com/api/logout",
 			    type:"POST",
 			    success: function(){
+			    	sessionStorage.removeItem('user_id');
+			    	sessionStorage.removeItem('shops_id');
+			    	sessionStorage.removeItem('authedshops_id');
 			     	window.location.href = "welcome.html";
 			    },
 			});
@@ -41,7 +44,7 @@ function logout() {
 
 function sessionRead() {
 	if(sessionStorage.user_id == "undefined"){
-		window.location.href = "welcome.html";
+		window.location = "welcome.html";
 	}
 	else{
 		return false;
@@ -49,37 +52,39 @@ function sessionRead() {
 }
 
 function loadSellerInfo() {
-    var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0];
-    $.ajax({
-         url:url,
-         type:"GET",
-         success:function (resp) {
-           if (resp.message=="success") {
-              seller_nickname = resp.data.seller_nickname;
-              seller_avatar = resp.data.seller_avatar;
-              auth_alipay_account = resp.data.auth_alipay_account;
-              if (!seller_nickname=="") {
-	              $(".info1").text(seller_nickname);
-	          }
-              if (!auth_alipay_account=="") {
-	              $(".info2").text(auth_alipay_account);
-	          }
-	          if(seller_avatar==null||seller_avatar==""){
-	          	$(".avatar").prop("src","images/avatar-default.jpg");
-	          }else{
-	          	$(".avatar").prop("src","http://server.shaonvonly.com/"+seller_avatar);
-	          }
-              
-           }else{
-              /*swal({
-                 title:"个人信息加载失败！",
-                 text:"提示",
-                 type:"warning"
-              });*/
-           }
-         }
+	if(sessionStorage.shops_id){
+	    var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
+	    $.ajax({
+	         url:url,
+	         type:"GET",
+	         success:function (resp) {
+	           if (resp.message=="success") {
+	              seller_nickname = resp.data.seller_nickname;
+	              seller_avatar = resp.data.seller_avatar;
+	              auth_alipay_account = resp.data.auth_alipay_account;
+	              if (!seller_nickname=="") {
+		              $(".info1").text(seller_nickname);
+		          }
+	              if (!auth_alipay_account=="") {
+		              $(".info2").text(auth_alipay_account);
+		          }
+		          if(seller_avatar==null||seller_avatar==""){
+		          	$(".avatar").prop("src","images/avatar-default.jpg");
+		          }else{
+		          	$(".avatar").prop("src","http://server.shaonvonly.com/"+seller_avatar);
+		          }
+	              
+	           }else{
+	              /*swal({
+	                 title:"个人信息加载失败！",
+	                 text:"提示",
+	                 type:"warning"
+	              });*/
+	           }
+	         }
 
-    });
+	    });
+	}
 }
 
 

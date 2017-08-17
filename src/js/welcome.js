@@ -50,15 +50,17 @@ function login() {
              		setTimeout("window.location = 'index.html'",2000); */
                     window.location = "index.html";
                     var user_id = resp.data.user_id;
-                    var authedshops_id = new Array();
-                    for (var i = 0; i < resp.data.shops.length; i++) {
-                        if (resp.data.shops[i].authed=="yes") {
-                            authedshops_id[i] = resp.data.shops[i].id;                           
+                    var authedshops_id = new Array();                    
+                    sessionStorage.user_id = user_id;
+                    if (resp.data.shops.length > 0) {
+                        sessionStorage.shops_id = resp.data.shops[0].id;
+                        console.log(sessionStorage.shops_id);
+                        if (resp.data.shops[0].authed=="yes") {
+                            sessionStorage.authedshops_id = resp.data.shops[0].id;
+                            console.log(sessionStorage.authedshops_id);                           
                         }
                     }
-                    var id =resp.data.shops
-                    sessionStorage.user_id = user_id;
-                    sessionStorage.authedshops_id = authedshops_id;
+                    
              	}
              	else if (resp.message=='参数不合法') {
                     swal({

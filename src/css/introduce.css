@@ -30,11 +30,12 @@ body{
 
 #panel-2-1>.panel-body>input,select{
 	width: 100%;
-	padding: 10px 5px;
+	padding: 6px 5px;
 	margin: 5px 0px;
 	border: 2px solid #fbcfce;
 	border-radius: 5px;
 	color: #b8a59e;
+	height: 5%;
 }
 
 

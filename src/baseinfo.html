@@ -78,7 +78,8 @@
         </div>
         <div class="right-container">
             <div class="infocontainer">
-                <div class="alert alert-warning hidden" id="tips">您的店铺还没有进行认证，请到“认证信息”界面创建</div>
+                <div class="alert alert-info hidden" id="tips2">您还没有自己的店铺，快创建一个吧！</div>
+                <div class="alert alert-warning hidden" id="tips">您的店铺还没有得到授权，请到“认证信息”界面创建店铺认证后等待管理员授权。</div>
                 <div class="shop-avatar">
                     店铺头像
                     <img src="" alt="" width="100" height="100" id="logo">
@@ -95,11 +96,11 @@
                     <span id="count">0</span><span>/200</span>
                     <br>
                     <button class="btn btn-default" id="saveChanges">保存信息</button>
+                    <button class="btn btn-default hidden" id="createShop">创建店铺</button>
                 </div>
             </div>
         </div>
         <div id="comple-form-upload-dialogs">
-            <%--comple--%>
             <div id="upload-dialog-1-text">
                 <input name="questionPhotos" id="upload-photos-1-text" type="file" multiple>
             </div>

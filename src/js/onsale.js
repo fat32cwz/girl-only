@@ -65,8 +65,7 @@ function showOnsaleGoods(pages_now) {
 	$("#goods-container").html('<div class="row no-margin" id="goods-container"></div>');
 	$(".text-center").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
-	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -101,7 +100,7 @@ function showOnsaleGoods(pages_now) {
 	       		}
 	       	}
 		});
-	}
+
 	
 }
 
