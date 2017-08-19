@@ -7,7 +7,7 @@ $(function () {
 
 function getCode() {
 	$("#getCode").click(function () {
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/sms_code_sending";
+		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/sms_code_sending";
 		$.ajax({
 			type:"POST",
 			url:url,
@@ -43,7 +43,7 @@ function changePassword() {
 			});
 			return;
 		}
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/password";
+		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/password";
 		
 		$.ajax({
 			type:"POST",

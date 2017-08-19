@@ -32,7 +32,7 @@ function login() {
 		var username = $("#username").val();
 		var password_hash = $("#password_hash").val();
 		$.ajax({
-             url: "http://server.shaonvonly.com/api/login",
+             url: "https://server.shaonvonly.com/api/login",
              type:"POST",
              data: {
                  username : username,

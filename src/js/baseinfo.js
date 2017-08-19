@@ -30,7 +30,7 @@ function getBaseInfo() {                                                  //加�
 			$("#tips").removeClass("hidden");
 			$(".infocontainer").css("margin-top","3%");
 		}
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
+		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
 		$.ajax({
 			url: url,
 	       	type:"GET",  
@@ -43,7 +43,7 @@ function getBaseInfo() {                                                  //加�
 	     			$("#description").text(description);
 	     			$('#count').text($("#description").val().length);
 	     			if(logo_pic_url!=null){
-		     			$("#logo").prop("src","http://server.shaonvonly.com/"+logo_pic_url);
+		     			$("#logo").prop("src","https://server.shaonvonly.com/"+logo_pic_url);
 		     		}else{
 		     			$("#logo").prop("src","images/shoplogo.jpg");
 		     		}
@@ -92,7 +92,7 @@ function reviseBaseInfo(){                      //上传提交店铺信息
 				data.append("name",name);
 				data.append("description",description);
 				data.append("logo_pic",files[0]);
-				url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0];
+				url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0];
 				$.ajax({
 					url: url,
 			       	type:"PUT",
@@ -276,7 +276,7 @@ function createShop() {
 			data.append("name",name);
 			data.append("description",description);
 			data.append("logo_pic",files[0]);
-			url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops";
+			url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops";
 			$.ajax({
 				url: url,
 		       	type:"POST",

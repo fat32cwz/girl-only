@@ -16,7 +16,7 @@ $(function () {
 function loadGoodsInfo(pages_now){
 	$("tbody").html('');                  //清屏
 	sessionStorage.pages_now = pages_now;
-	var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/home";
+	var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/home";
 	$.ajax({
 		url: url,
     type:"GET",

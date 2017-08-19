@@ -95,7 +95,7 @@ function readFile2() {
 
 function createNewGoods() {
 	$("#submit").click(function () {
-		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/goods";
+		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
        //表单值获取开始
 		name = $("#babyTitle").val();
 		category_id = $(".typeOnSelect").attr("data-type");
@@ -255,6 +255,7 @@ function getTableData() {
             JsonData.size = document.getElementById("good_sub").rows[i].cells[1].firstChild.value;
             JsonData.type = document.getElementById("good_sub").rows[i].cells[2].firstChild.value;
             JsonData.price = document.getElementById("good_sub").rows[i].cells[3].firstChild.value;
+            JsonData.deposit = document.getElementById("good_sub").rows[i].cells[5].firstChild.value;
             JsonData.sku = 0;
             aa.push(JsonData);
         }
@@ -338,11 +339,13 @@ function showDeposit() {
 		if ($("#spot").prop("checked")==true) {
 			$(".deposit").addClass("invisible");
             $("#tips").addClass("hidden");
+            $("#tips2").removeClass("hidden");
             $("#count_type").removeClass("hidden");
 		}
 		else if($("#spot1").prop("checked")==true){
 			$(".deposit").removeClass("invisible");
             $("#tips").removeClass("hidden");
+            $("#tips2").addClass("hidden");
             $("#count_type").addClass("hidden");
 		}
 	});
@@ -381,7 +384,8 @@ function initstaupload() {
             $(this).dialog('option', 'position', 'center');
         }
     };
-     url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/goods";
+     url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
+     console.log(url);
      var upoptions = {
         language: 'zh', // 设置语言
         uploadUrl: url, // 上传的地址
