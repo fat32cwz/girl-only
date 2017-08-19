@@ -7,7 +7,7 @@ $(function () {
 })		
 
 function getAutInfo() {
-	url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/authentication";
+	url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/authentication";
 	$.ajax({
 		url: url,
        	type:"GET",  
@@ -94,7 +94,7 @@ function createAut() {
 		no = $("#new_no").val();
 		address = $("#new_address").val();
 		alipay_account = $("#new_alipay_account").val();
-		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/auths";
+		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id+"/auths";
 		$.ajax({
 			url:url,
 			type:"POST",

@@ -77,7 +77,7 @@ function showRecentGoods(pages_now) {              //近三个月订单加载
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -136,7 +136,7 @@ function showPayNowGoods(pages_now) {                    //等待买家付现货
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -197,7 +197,7 @@ function showPayDepositGoods(pages_now) {             //等待买家付定金
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); get3MonthBefor();
 		$.ajax({
@@ -258,7 +258,7 @@ function showPayFinalGoods(pages_now) {            //等待买家付尾款
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -318,7 +318,7 @@ function showWaitingGoods(pages_now) {                 //等待发货
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -379,7 +379,7 @@ function showDeliveredGoods(pages_now) {               //商家已发货
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -439,7 +439,7 @@ function showRefundingGoods(pages_now) {                //退货中
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -500,7 +500,7 @@ function showSuccessGoods(pages_now) {                //交易成功
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -560,7 +560,7 @@ function showClosedGoods(pages_now) {             //关闭的订单
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -621,7 +621,7 @@ function showThreeMonthsAgoOrders(pages_now) {                  //	三个月前�
 	//$("#pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	if (sessionStorage.authedshops_id) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/orders";
 		nowDate = getNowMonth();
 		threeMonthBefore = get3MonthBefor(); 
 		$.ajax({
@@ -926,6 +926,7 @@ function getNowMonth(){                               //获取当前月的下一
     month = currDate.getMonth()+2;
     month = (month < 10) ? ('0' + month) : month;
     middleDate = year + '-'+month+'-01';
+    currDate.setMonth()
     var resultDate = new Date(middleDate).toISOString();
   	return resultDate;
 }
@@ -953,7 +954,7 @@ function batchDeliver() {                                 //批量发货
 			name = $(checkedArray[i]).parent().next().next().next().next().next().text();
 			console.log(order_id,name);
 			$.ajax({
-				url: "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/orders/"+order_id+"/delivery",
+				url: "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/orders/"+order_id+"/delivery",
 				type:"PATCH",
 				data:{
 					name: name,

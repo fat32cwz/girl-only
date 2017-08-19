@@ -27,7 +27,7 @@ function logout() {
 	}).then(function(isConfirm){
 		if(isConfirm){
 			$.ajax({
-			    url: "https://server.shaonvonly.com/api/logout",
+			    url: "http://server.shaonvonly.com/api/logout",
 			    type:"POST",
 			    success: function(){
 			    	sessionStorage.removeItem('user_id');
@@ -53,7 +53,7 @@ function sessionRead() {
 
 function loadSellerInfo() {
 	if(sessionStorage.shops_id){
-	    var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
+	    var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.shops_id;
 	    $.ajax({
 	         url:url,
 	         type:"GET",
@@ -71,7 +71,7 @@ function loadSellerInfo() {
 		          if(seller_avatar==null||seller_avatar==""){
 		          	$(".avatar").prop("src","images/avatar-default.jpg");
 		          }else{
-		          	$(".avatar").prop("src","https://server.shaonvonly.com/"+seller_avatar);
+		          	$(".avatar").prop("src","http://server.shaonvonly.com/"+seller_avatar);
 		          }
 	              
 	           }else{

@@ -65,7 +65,7 @@ function showOnsaleGoods(pages_now) {
 	$("#goods-container").html('<div class="row no-margin" id="goods-container"></div>');
 	$(".text-center").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -109,7 +109,7 @@ function showReservingGoods(pages_now) {
 	$(".text-center").html('<ul class="pagination pagination"></ul>');                       //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -155,7 +155,7 @@ function showFinalGoods(pages_now) {
 	$(".text-center").html('<ul class="pagination pagination"></ul>');                       //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -202,7 +202,7 @@ function showFinalGoods(pages_now) {
 function createShopsCard(i,si,n,p,o,s,status,url,end) {                          //生成商品卡片
 	if(status=="O"){
 		$("#goods-container").append('<div class="goods"> '+
-	    ' <img src="https://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
+	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
 	    '<div class="goods-info">'+
 	    	'<div class="goods-id hidden">'+i+'</div>'+
 	    	'<div class="shop-id hidden">'+si+'</div>'+
@@ -232,7 +232,7 @@ function createShopsCard(i,si,n,p,o,s,status,url,end) {                         
 	}
 	else if(status == "R"){
 		$("#goods-container").append('<div class="goods"> '+
-	    ' <img src="https://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
+	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
 	    '<div class="goods-info">'+
 	    	'<div class="goods-id hidden">'+i+'</div>'+
 	    	'<div class="shop-id hidden">'+si+'</div>'+
@@ -263,7 +263,7 @@ function createShopsCard(i,si,n,p,o,s,status,url,end) {                         
 	}
 	else if(status=="F"){
 		$("#goods-container").append('<div class="goods"> '+
-	    ' <img src="https://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
+	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
 	    '<div class="goods-info">'+
 	    	'<div class="goods-id hidden">'+i+'</div>'+
 	    	'<div class="shop-id hidden">'+si+'</div>'+
@@ -325,7 +325,7 @@ function reserved() {                   //关闭定金
 		var user_id = sessionStorage.user_id;
 		var id = $(this).parent().parent().find(".goods-id").text();
 		var shop_id = $(this).parent().parent().find(".shop-id").text();
-		var url = "https://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/reserved";
+		var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/reserved";
 		swal({
 			title: '你确定要关闭该商品的定金吗？',
 			text: "操作提示!",
@@ -369,7 +369,7 @@ function offsale() {                   //商品下架
 		var user_id =sessionStorage.user_id;
 		var id = $(this).parent().parent().find(".goods-id").text();
 		var shop_id = $(this).parent().parent().find(".shop-id").text();
-		var url = "https://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/offsale";
+		var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/offsale";
 		swal({
 			title: '你确定要下架该商品吗？',
 			text: "操作提示!",
@@ -412,7 +412,7 @@ function final() {
 		var user_id =sessionStorage.user_id;
 		var id = $(this).parent().parent().find(".goods-id").text();
 		var shop_id = $(this).parent().parent().find(".shop-id").text();
-		var url = "https://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/final";
+		var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+id+"/final";
 		swal({
 			title: '你确定为该商品开尾款吗？',
 			text: "操作提示!",
@@ -526,7 +526,7 @@ function endTimeReset(obj) {
 	var shop_id = sessionStorage.authedshops_id[0];
 	var goods_id = $(obj).parent().find(".goods-id").text();
 	console.log(goods_id);
-	var url = "https://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+goods_id+"/status_end_at";
+	var url = "http://server.shaonvonly.com/api/users/"+user_id+"/shops/"+shop_id+"/goods/"+goods_id+"/status_end_at";
 	swal({
 		title: '修改结束时间',
 		text: '提示：请谨慎操作！',

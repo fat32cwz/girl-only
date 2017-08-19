@@ -95,7 +95,7 @@ function readFile2() {
 
 function createNewGoods() {
 	$("#submit").click(function () {
-		url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
+		url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
        //表单值获取开始
 		name = $("#babyTitle").val();
 		category_id = $(".typeOnSelect").attr("data-type");
@@ -384,7 +384,7 @@ function initstaupload() {
             $(this).dialog('option', 'position', 'center');
         }
     };
-     url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
+     url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id+"/goods";
      console.log(url);
      var upoptions = {
         language: 'zh', // 设置语言

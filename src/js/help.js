@@ -19,7 +19,7 @@ $(function () {
 function getCode() {
 	$("#getCode").click(function () {
 		username = $("#username").val();
-		url = "https://server.shaonvonly.com/api/users/sms_code_sending/username";
+		url = "http://server.shaonvonly.com/api/users/sms_code_sending/username";
 		$.ajax({
 			type:"POST",
 			url:url,
@@ -67,7 +67,7 @@ function changePassword() {
 			});
 			return;
 		}
-		url = "https://server.shaonvonly.com/api/users/reset_password";
+		url = "http://server.shaonvonly.com/api/users/reset_password";
 		
 		$.ajax({
 			type:"POST",

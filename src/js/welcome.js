@@ -32,14 +32,14 @@ function login() {
 		var username = $("#username").val();
 		var password_hash = $("#password_hash").val();
 		$.ajax({
-             url: "https://server.shaonvonly.com/api/login",
+             url: "http://server.shaonvonly.com/api/login",
              type:"POST",
              data: {
                  username : username,
                  password_hash: password_hash,
              },
              success: function(resp){
-             	if (resp.message=='success') {
+             	if (resp.status== 0) {
 /*             		swal({
                         title:'登录成功！',
                         type: 'success',

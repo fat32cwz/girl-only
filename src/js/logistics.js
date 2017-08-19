@@ -56,7 +56,7 @@ function showWaitingOrders(pages_now) {
 	//$(".pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -110,7 +110,7 @@ function showSendingOrders(pages_now) {                                        /
 	//$(".pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -164,7 +164,7 @@ function showDeliveredOrders(pages_now) {                                       
 	//$(".pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -220,7 +220,7 @@ function showUnpaidOrders(pages_now) {                                    //未�
 	//$(".pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -274,7 +274,7 @@ function showCanceledOrders(pages_now) {                                 //被�
 	//$(".pagination").html('<ul class="pagination pagination"></ul>');                     //清屏
 	sessionStorage.pages_now = pages_now;
 	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
-		var url = "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/orders";
 		$.ajax({
 			url: url,
 	       	type:"GET",   
@@ -490,7 +490,7 @@ function batchDeliver() {                                 //批量发货
 			name = $(checkedArray[i]).parent().next().next().next().next().next().text();
 			console.log(order_id,name);
 			$.ajax({
-				url: "https://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/orders/"+order_id+"/delivery",
+				url: "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[0]+"/orders/"+order_id+"/delivery",
 				type:"PATCH",
 				data:{
 					name: name,
