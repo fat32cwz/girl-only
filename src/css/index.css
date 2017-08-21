@@ -38,6 +38,13 @@ tr{
 	margin-right: 40px;
 }
 
+.countData{
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 20px;
+	color: #ac988f;
+}
+
 
 .pagination>li>a{
 	background-color: #ffe4e9;

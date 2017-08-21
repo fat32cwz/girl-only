@@ -12,7 +12,7 @@ body{
 
 .header{
 	width: auto;
-	margin-left: 35%;
+	margin-left: 30%;
 }
 
 .header>.nav>li>a{
@@ -65,11 +65,12 @@ body{
 	display: inline-block;
 	background-color: #fff;
 	position: relative;
-}
-
-.goods-body{
 	margin-top: 40px;
 }
+
+/*.goods-body{
+	margin-top: 40px;
+}*/
 
 
 .goods-img,.goods-info{
@@ -239,7 +240,7 @@ body{
 @media(max-width: 1440px){
 	.header{
 		width: auto;
-		margin-left: 33%;
+		margin-left: 30%;
 	}
 
 	#button-group>button{

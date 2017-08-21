@@ -42,6 +42,15 @@ function tabChange() {
 		}
 	});
 
+	$("#reserved").bind({
+		click:function () {
+			$(".nav-tabs li .active").removeClass("active");
+			$(this).addClass("active");
+
+			showReservedGoods(1);
+		}
+	});
+
 	/*$("#final").click(function () {
 		$(".nav-tabs li .active").removeClass("active");
 		$(this).addClass("active");
@@ -148,6 +157,53 @@ function showReservingGoods(pages_now) {
 		});
 	}
 }
+
+
+function showReservedGoods(pages_now) {
+	$("#goods-container").html('<div class="row no-margin" id="goods-container"></div>');  
+	$(".text-center").html('<ul class="pagination pagination"></ul>');                       //清屏
+	sessionStorage.pages_now = pages_now;
+	for (var i = 0; i < sessionStorage.authedshops_id.length; i++) {
+		var url = "http://server.shaonvonly.com/api/users/"+sessionStorage.user_id+"/shops/"+sessionStorage.authedshops_id[i]+"/goods";
+		$.ajax({
+			url: url,
+	       	type:"GET",   
+	       	data:{
+	       		status:"reserved"
+	       	},   	
+	       	success:function (resp) {
+	       		if (resp.message=="success") {
+	       			showdata = 6;                                       //每页显示条数
+       				data_total = resp.data.length;		                //总数据条数
+					pages_total = parseInt(data_total/6)+(data_total % 6 == 0 ? 0:1);    //总页数
+					startRange = (pages_now-1)*showdata; 
+					endRange = (pages_now==pages_total?data_total:pages_now*showdata);
+					console.log(data_total,pages_total,startRange,endRange);
+					if($(".active").attr("data-tab")=="4"){
+			       		$("#goods-container").empty();
+		       		}
+	       			for (var j = ((pages_now-1)*showdata); j < endRange; j++) {
+	       				goods_id = resp.data[j].id;
+	       				shop_id =resp.data[j].shop_id;
+	       				name = resp.data[j].name;
+	       				price = resp.data[j].price;
+	       				ska = resp.data[j].ska;
+	       				order_goods_sum = resp.data[j].order_goods_sum;
+	       				goods_pic_default_pic_url = resp.data[j].goods_pic_default_pic_url;
+	       				status = "Rd";
+	       				var date = new Date(resp.data[j].status_end_at);
+		       			status_end_at = ISOtoDate(date);	           //结束时间
+	       				if($(".active").attr("data-tab")=="4"){
+		       				createShopsCard(goods_id,shop_id,name,price,order_goods_sum,ska,status,goods_pic_default_pic_url,status_end_at);     //生成商品卡片
+		       				createPagination(pages_now,pages_total,status);           //分页
+	       				}
+	       			}
+	       		}
+	       	}
+		});
+	}
+}
+
 
 
 function showFinalGoods(pages_now) {
@@ -261,7 +317,7 @@ function createShopsCard(i,si,n,p,o,s,status,url,end) {                         
 	  '</div>');
 
 	}
-	else if(status=="F"){
+	else if(status=="Rd"){
 		$("#goods-container").append('<div class="goods"> '+
 	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
 	    '<div class="goods-info">'+
@@ -285,6 +341,36 @@ function createShopsCard(i,si,n,p,o,s,status,url,end) {                         
 	        '</div>'+
 	        '<div class="goods-info-item" id="button-group">'+
 	            '<button class="btn  btn-default kw" type="button" id="kw">开放尾款</button>'+
+	            '<button class="btn  btn-default xj" type="button" id="xj">下架商品</button>'+ 
+	        '</div>'+
+	    '</div>'+
+	    '<a href="##" onclick="endTimeReset(this);"><div class="top_bar">结束时间：'+end+'</div></a>'+
+	  '</div>');
+	}	
+	else if(status=="F"){
+		$("#goods-container").append('<div class="goods"> '+
+	    ' <img src="http://server.shaonvonly.com/'+url+'" alt="图片无法访问" class="goods-img">'+
+	    '<div class="goods-info">'+
+	    	'<div class="goods-id hidden">'+i+'</div>'+
+	    	'<div class="shop-id hidden">'+si+'</div>'+
+	        '<div class="goods-info-item">'+
+	            '<span class="goods-info-title">名&#x3000称</span>'+
+	            '<span class="goods-info-data">'+n+'</span>'+
+	        '</div>'+
+	        '<div class="goods-info-item">'+
+	            '<span class="goods-info-title">价&#x3000格</span>'+
+	            '<span class="goods-info-data">'+p+'</span>'+
+	        '</div>'+
+	        '<div class="goods-info-item">'+
+	            '<span class="goods-info-title">销&#x3000量</span>'+
+	            '<span class="goods-info-data">'+o+'</span>'+
+	        '</div>'+
+	        '<div class="goods-info-item">'+
+	            '<span class="goods-info-title">库&#x3000存</span>'+
+	            '<span class="goods-info-data">'+s+'</span>'+
+	        '</div>'+
+	        '<div class="goods-info-item" id="button-group">'+
+	            '<button class="btn  btn-default kw" type="button" id="kw" disabled>开放尾款</button>'+
 	            '<button class="btn  btn-default xj" type="button" id="xj">下架商品</button>'+ 
 	        '</div>'+
 	    '</div>'+
@@ -470,6 +556,9 @@ function createPagination(pages_now,pages_total,status) {                     //
     		showOnsaleGoods(target);
     	}
     	else if (status == "R") {
+    		showReservingGoods(target);
+    	}
+    	else if (status == "R") {
     		showReservedGoods(target);
     	}
     	else if (status == "F") {
@@ -485,6 +574,9 @@ function createPagination(pages_now,pages_total,status) {                     //
     	else if (status == "R") {
     		showReservingGoods(prevPage);
     	}
+    	else if (status == "Rd") {
+    		showReservedGoods(prevPage);
+    	}
     	else if (status == "F") {
     		showFinalGoods(target);
     	}
@@ -497,6 +589,9 @@ function createPagination(pages_now,pages_total,status) {                     //
     	}
     	else if (status == "R") {
     		showReservingGoods(nextPage);
+    	}
+    	else if (status == "Rd") {
+    		showReservedGoods(nextPage);
     	}
     	else if (status == "F") {
     		showFinalGoods(target);
@@ -511,6 +606,9 @@ function createPagination(pages_now,pages_total,status) {                     //
 	    	}
 	    	else if(status == "R") {
 	    		showReservingGoods(mytarget);
+	    	}
+	    	else if(status == "Rd") {
+	    		showReservedGoods(mytarget);
 	    	}
 	    	else if (status == "F") {
     			showFinalGoods(target);
