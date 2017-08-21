@@ -109,7 +109,7 @@ function showRecentGoods(pages_now) {              //近三个月订单加载
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -169,7 +169,7 @@ function showPayNowGoods(pages_now) {                    //等待买家付现货
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -230,7 +230,7 @@ function showPayDepositGoods(pages_now) {             //等待买家付定金
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -291,7 +291,7 @@ function showPayFinalGoods(pages_now) {            //等待买家付尾款
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -351,7 +351,7 @@ function showWaitingGoods(pages_now) {                 //等待发货
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -412,7 +412,7 @@ function showDeliveredGoods(pages_now) {               //商家已发货
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -472,7 +472,7 @@ function showRefundingGoods(pages_now) {                //退货中
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -533,7 +533,7 @@ function showSuccessGoods(pages_now) {                //交易成功
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -593,7 +593,7 @@ function showClosedGoods(pages_now) {             //关闭的订单
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -652,7 +652,7 @@ function showThreeMonthsAgoOrders(pages_now) {                  //	三个月前�
 		       				customer_nickname = resp.data[j].customer_nickname;                                       //买家
 		       				statusNum = resp.data[j].status;										
 	                        status = statusNumToStatus(statusNum);                                 //交易状态
-		       				actual_payment = resp.data[j].order_goods[0].actual_payment;			//实收款
+		       				actual_payment = resp.data[j].actual_payment;			//实收款
 		       				var date = new Date(resp.data[j].created_at);
 		       				created_at = date.toLocaleString();					 		          //订单生成时间
 		       				order_id = resp.data[j].order_no;                        //订单编号
@@ -684,7 +684,7 @@ function statusNumToStatus(statusNum) {
 			status = "等待买家付定金";
 			break;
 		case 3:
-			status = "等待商家开放付现货款";
+			status = "等待商家开尾款";
 			break;
 		case 4:
 			status = "等待买家付尾款";
