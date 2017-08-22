@@ -24,12 +24,16 @@ body{
 	vertical-align: bottom;
 }
 
-.shop-avatar,.shop-name,.shop-introduction{
+.shop-avatar,.shop-name,.shop-address,.shop-introduction{
 	font-size: 20px;
 	color: #b7a39c;
 }
 
 .shop-name{
+	margin: 30px 0px;
+}
+
+.shop-address{
 	margin: 30px 0px;
 }
 
@@ -43,11 +47,11 @@ textarea:focus{
 	outline: 0;
 }
 
-.shop-avatar>img,.shop-name>span,.shop-introduction>textarea{
+.shop-avatar>img,.shop-name>span,.shop-address>span,.shop-introduction>textarea{
 	margin-left: 30px;
 }
 
-#changeAvatar,#changeName{
+#changeAvatar,#changeName,#changeAddress{
 	color: #fb9cb0;
 	border: 2px solid #fb9cb0;
 	background-color: #fff;

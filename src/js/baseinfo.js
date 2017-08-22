@@ -3,6 +3,8 @@ $(function () {
 
 	changeName();         //更改店名按钮事件
 
+	changeAddress();      //更改商家地址
+
 	textLengthCount();    //文本计数器
 
 	reviseBaseInfo();     //上传提交店铺信息
@@ -146,6 +148,56 @@ function changeName() {                      //更改店名按钮事件
 		});
 	});
 }
+
+function changeAddress() {                      //更改店名按钮事件
+	$("#changeAddress").click(function () {
+		swal({
+		  title: '更改地址',
+		  html:
+		    '<input id="new_province" class="swal2-input" autofocus>' +
+		    '<input id="new_city" class="swal2-input">' +
+		    '<input id="new_district" class="swal2-input">' +
+		    '<input id="new_detail" class="swal2-input">' +
+		    '<input id="new_name" class="swal2-input">' +
+		    '<input id="new_phone_number" class="swal2-input">' +
+		    '<input id="new_telephone" class="swal2-input">' +
+		    '<input id="new_postcode" class="swal2-input">' +
+		    '<input id="new_email" class="swal2-input">',
+		  preConfirm: function() {
+		    return new Promise(function(resolve) {
+		      if (result) {
+		        resolve([
+		          $('#new_province').val(),
+		          $('#new_city').val(),
+		          $('#new_district').val(),
+		          $('#new_detail').val(),
+		          $('#new_name').val(),
+		          $('#new_phone_number').val(),
+		          $('#new_telephone').val(),
+		          $('#new_postcode').val(),
+		          $('#new_email').val()
+		        ]);
+		      }
+		    });
+		  }
+		}).then(function(result) {
+		  if (result) {
+		    $('#province').text($('#new_province').val()),
+		    $('#city').text($('#new_city').val()),
+		    $('#district').text($('#new_district').val()),
+		    $('#detail').text($('#new_detail').val()),
+		    $('#name').text($('#new_name').val()),
+		    $('#phone_number').text($('#new_phone_number').val()),
+		    $('#telephone').text($('#new_telephone').val()),
+		    $('#postcode').text($('#new_postcode').val()),
+		    $('#email').text($('#new_email').val())
+		  }
+		})
+	});
+}
+
+
+
 
 function initstaupload() {
     /*初始化模态框和上传控件*/
