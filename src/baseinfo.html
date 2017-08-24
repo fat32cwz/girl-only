@@ -87,12 +87,13 @@
                 </div>
                 <div class="shop-name">
                     店铺名称
-                    <span class="name" id="name"></span>
+                    <span class="name" id="shopname"></span>
                     <button class="btn btn-default" id="changeName">更改</button>
                 </div>
                 <div class="shop-address">
-                    店铺地址
+                    店铺地址 
                     <span class="address-title"  id="province"></span>
+                    <span class="hidden"  id="addressId"></span>
                     <span class="address-title"  id="city"></span>
                     <span class="address-title"  id="district"></span>
                     <span class="address-title"  id="detail"></span>
@@ -101,7 +102,8 @@
                     <span class="address-title"  id="telephone"></span>
                     <span class="address-title"  id="postcode"></span>
                     <span class="address-title"  id="email"></span>
-                    <button class="btn btn-default" id="changeAddress">更改</button>
+                    <button class="btn btn-default" id="changeAddress">更改地址</button>
+                    <button class="btn btn-default hidden" id="createAddress">创建地址</button>
                 </div>
                 <div class="shop-introduction">
                     店铺介绍
@@ -118,8 +120,57 @@
                 <input name="questionPhotos" id="upload-photos-1-text" type="file" multiple>
             </div>
         </div>
-
-        
+        <div class="modal" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">新增地址</h4>
+                    </div>
+                    <div class="modal-body">
+                        省份(必填)：<input id="new_province" class="addressinput" autofocus required><br>
+                        城市(必填)：<input id="new_city" class="addressinput" required><br>
+                        区县(必填)：<input id="new_district" class="addressinput" required><br>
+                        详细地址(必填)：<input id="new_detail" class="addressinput" required><br>
+                        姓名(必填)：<input id="new_name" class="addressinput" required><br>
+                        手机电话(必填)：<input id="new_phone_number" class="addressinput" required><br>
+                        固定电话：<input id="new_telephone" class="addressinput"><br>
+                        邮编：<input id="new_postcode" class="addressinput"><br>
+                        邮箱：<input id="new_email" class="addressinput">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" id="createSubmit">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal" id="mymodal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">更改地址</h4>
+                    </div>
+                    <div class="modal-body">
+                        省份(必填)：<input id="new_province1" class="addressinput" autofocus required><br>
+                        城市(必填)：<input id="new_city1" class="addressinput" required><br>
+                        区县(必填)：<input id="new_district1" class="addressinput" required><br>
+                        详细地址(必填)：<input id="new_detail1" class="addressinput" required><br>
+                        姓名(必填)：<input id="new_name1" class="addressinput" required><br>
+                        手机电话(必填)：<input id="new_phone_number1" class="addressinput" required><br>
+                        固定电话：<input id="new_telephone1" class="addressinput"><br>
+                        邮编：<input id="new_postcode1" class="addressinput"><br>
+                        邮箱：<input id="new_email1" class="addressinput">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" id="changeSubmit">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <a href="mqqwpa://im/chat?chat_type=wpa&uin=526660788&version=1">test</a>
         <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
         <script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
         <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->

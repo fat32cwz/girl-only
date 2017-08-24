@@ -47,11 +47,15 @@ textarea:focus{
 	outline: 0;
 }
 
-.shop-avatar>img,.shop-name>span,.shop-address>span,.shop-introduction>textarea{
+.shop-avatar>img,.shop-name>span,.shop-introduction>textarea{
 	margin-left: 30px;
 }
 
-#changeAvatar,#changeName,#changeAddress{
+.shop-address>span:first-child{
+	margin-left: 30px;
+}
+
+#changeAvatar,#changeName,#changeAddress,#createAddress{
 	color: #fb9cb0;
 	border: 2px solid #fb9cb0;
 	background-color: #fff;
@@ -81,4 +85,13 @@ textarea:focus{
 
 #tips,#tips2{
 	width:60%;
+}
+
+.addressinput{
+	width: 50%!important;
+	margin:10px!important;
+}
+
+.address-title{
+	font-size: 16px;
 }
